@@ -92,6 +92,11 @@ func (system *IsingSystem) DisplayGrid() {
 	}
 }
 
+// FlipSpin flips the spin at grid position (i, j)
+func (system *IsingSystem) FlipSpin(position *Position) {
+	system.grid[position.i][position.j] = -1 * system.grid[position.i][position.j]
+}
+
 // Update runs a MC sweep for every spin in the system
 func (system *IsingSystem) Update() {
 	system.grid[10][10] = 0

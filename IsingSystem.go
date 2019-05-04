@@ -20,6 +20,8 @@ type IsingSystem struct {
 	beta               float64
 }
 
+// Position is an arbitrary representation for the a grid location that allows us to change the underying grid implementation
+// (coordinate origin, data structures, etc) but still have a consistent representation for setting and retrieving values in the grid
 type Position struct {
 	i int
 	j int

@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 	"strconv"
 	"sync"
+
+	"github.com/faiface/pixel/pixelgl"
 )
 
 func runIsingSystem(seed int64, wg *sync.WaitGroup, systemID int) {
@@ -19,22 +20,35 @@ func runIsingSystem(seed int64, wg *sync.WaitGroup, systemID int) {
 	fmt.Println("System " + strconv.Itoa(systemID) + " finished!")
 }
 
+// func main() {
+// 	systemViewer := NewSystemViewer(40, 5)
+// 	pixelgl.Run(systemViewer.Run)
+
+// 	numberOfCores := runtime.NumCPU()
+// 	fmt.Printf("Using " + strconv.Itoa(numberOfCores) + " cores...\n")
+// 	runtime.GOMAXPROCS(numberOfCores)
+
+// 	var wg sync.WaitGroup
+
+// 	i := 0
+// 	for i < 1 {
+// 		wg.Add(1)
+// 		fmt.Printf("Starting system %d\n", i)
+// 		go runIsingSystem(int64(i), &wg, i)
+// 		i++
+// 	}
+// 	fmt.Println("")
+
+// 	wg.Wait()
+// 	fmt.Println("\nAll systems complete!!!")
+// }
+
 func main() {
-	numberOfCores := runtime.NumCPU()
-	fmt.Printf("Using " + strconv.Itoa(numberOfCores) + " cores...\n")
-	runtime.GOMAXPROCS(numberOfCores)
+	isingSystem := NewIsingSystem(40, 1, true)
+	systemViewer := NewSystemViewer(isingSystem, 40, 5)
+	pixelgl.Run(systemViewer.Run)
 
-	var wg sync.WaitGroup
-
-	i := 0
-	for i < 1 {
-		wg.Add(1)
-		fmt.Printf("Starting system %d\n", i)
-		go runIsingSystem(int64(i), &wg, i)
-		i++
+	for i := 0; i < 10; i++ {
+		isingSystem.Update()
 	}
-	fmt.Println("")
-
-	wg.Wait()
-	fmt.Println("\nAll systems complete!!!")
 }

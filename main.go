@@ -47,9 +47,11 @@ func main() {
 	// systemViewer := NewSystemViewer(isingSystem, 40, 5)
 	// pixelgl.Run(systemViewer.Run)
 
-	for i := 0; i < 10; i++ {
-		time.Sleep(500 * time.Millisecond)
+	for i := 0; i < 5000; i++ {
+		time.Sleep(50 * time.Millisecond)
 		isingSystem.Update()
-		isingSystem.DisplayGrid()
+		if i%10 == 0 {
+			isingSystem.DisplayGrid()
+		}
 	}
 }

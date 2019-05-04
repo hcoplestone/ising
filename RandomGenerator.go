@@ -19,6 +19,7 @@ func NewRandomGenerator(seed int64) *RandomGenerator {
 }
 
 // RandomInt generates a random integer between 0 and maxInt
+// i.e. a non-negative pseudo-random number in [0,n).
 func (rg RandomGenerator) RandomInt(maxInt int) int {
 	return rg.rand.Intn(maxInt)
 }

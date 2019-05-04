@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"os/exec"
 )
@@ -19,6 +20,14 @@ type IsingSystem struct {
 	initialTemperature float64
 	beta               float64
 }
+
+// Grid direction definitions
+const (
+	DirectionRight int = 0
+	DirectionDown  int = 1
+	DirectionLeft  int = 2
+	DirectionUp    int = 3
+)
 
 // Position is an arbitrary representation for the a grid location that allows us to change the underying grid implementation
 // (coordinate origin, data structures, etc) but still have a consistent representation for setting and retrieving values in the grid
@@ -45,6 +54,8 @@ func NewIsingSystem(gridSize int, seed int64, verbose bool) *IsingSystem {
 		fmt.Printf("Creating system, grid size %d.\n", gridSize)
 	}
 
+	system.Reset()
+
 	return system
 }
 
@@ -53,10 +64,10 @@ func (system *IsingSystem) Reset() {
 	// Set initial temperature
 	system.SetTemperature(system.initialTemperature)
 
-	// Reset grid
+	// Reset all spins to down (-1)
 	for i, column := range system.grid {
 		for j := range column {
-			system.grid[i][j] = 0
+			system.grid[i][j] = -1
 		}
 	}
 }
@@ -81,7 +92,7 @@ func (system *IsingSystem) DisplayGrid() {
 	cmd := exec.Command("clear") //Linux example, its tested
 	cmd.Stdout = os.Stdout
 	cmd.Run()
-	// fmt.Printf("\n")
+	fmt.Printf("beta = %e \n", system.beta)
 	for _, column := range system.grid {
 		for _, row := range column {
 			if row == 1 {
@@ -94,13 +105,80 @@ func (system *IsingSystem) DisplayGrid() {
 	}
 }
 
-// FlipSpin flips the spin at grid position (i, j)
-func (system *IsingSystem) FlipSpin(position *Position) {
-	system.grid[position.i][position.j] = -1 * system.grid[position.i][position.j]
+// DeterminePositionOfNeighbouringCell determines the grid coordinate position
+// of a neighbouring cell in a given direction, applying periodic boundary conditions.
+func (system *IsingSystem) DeterminePositionOfNeighbouringCell(initialPosition *Position, neighbourDirection int) Position {
+	neighbourPosition := Position{initialPosition.i, initialPosition.j}
+
+	if neighbourDirection == DirectionRight {
+		neighbourPosition.i = (neighbourPosition.i + 1) % system.gridSize
+	}
+
+	if neighbourDirection == DirectionLeft {
+		neighbourPosition.i = (neighbourPosition.i - 1 + system.gridSize) % system.gridSize
+	}
+
+	if neighbourDirection == DirectionUp {
+		neighbourPosition.j = (neighbourPosition.j + 1) % system.gridSize
+	}
+
+	if neighbourDirection == DirectionDown {
+		neighbourPosition.j = (neighbourPosition.j - 1 + system.gridSize) % system.gridSize
+	}
+
+	return neighbourPosition
 }
 
-// Update runs a MC sweep for every spin in the system
+// ComputeLocalFieldDividedByTemperature returns the local magnetic field for the spin at the specified position divided by the temperature
+func (system *IsingSystem) ComputeLocalFieldDividedByTemperature(position *Position) float64 {
+	sumOfNearestNeighbourSpins := float64(0.0)
+	for direction := 0; direction < 4; direction++ {
+		nearestNeighbourPosition := system.DeterminePositionOfNeighbouringCell(position, direction)
+		sumOfNearestNeighbourSpins += float64(system.ReadGrid(&nearestNeighbourPosition))
+	}
+	return sumOfNearestNeighbourSpins * system.beta
+}
+
+// FlipSpin flips the spin at grid position (i, j)
+func (system *IsingSystem) FlipSpin(position *Position) {
+	// if system.verbose {
+	// fmt.Printf("Flipping spin at (%d, %d)", position.i, position.j)
+	// }
+	system.grid[position.i][position.j] = -1 * system.grid[position.i][position.j]
+	// if system.ReadGrid(position) == 1 {
+	// system.SetGrid(position, 0)
+	// } else {
+	// system.SetGrid(position, 1)
+	// }
+}
+
+// AttemptSpinFlip attempts to flip a spin. Flip is accepted/rejected by Metropolis rule
+func (system *IsingSystem) AttemptSpinFlip() {
+	i := system.randomGenerator.RandomInt(system.gridSize)
+	j := system.randomGenerator.RandomInt(system.gridSize)
+	position := Position{i, j}
+
+	hLocal := system.ComputeLocalFieldDividedByTemperature(&position)
+	dE := 2.0 * hLocal * float64(system.ReadGrid(&position))
+
+	if dE < 0 {
+		system.FlipSpin(&position)
+	} else {
+		sampleProbability := system.randomGenerator.rand.Float64()
+		if sampleProbability < math.Exp(-1*dE) {
+			system.FlipSpin(&position)
+		}
+	}
+}
+
+// MCSweep attempts N spin flips, where N is the number of spins in the system
+func (system *IsingSystem) MCSweep() {
+	for i := 0; i < system.gridSize*system.gridSize; i++ {
+		system.AttemptSpinFlip()
+	}
+}
+
+// Update runs an MC sweep
 func (system *IsingSystem) Update() {
-	system.grid[10][10] = 0
-	system.grid[10][15] = 1
+	system.MCSweep()
 }

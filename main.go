@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"sync"
-
-	"github.com/faiface/pixel/pixelgl"
+	"time"
 )
 
 func runIsingSystem(seed int64, wg *sync.WaitGroup, systemID int) {
@@ -44,11 +43,13 @@ func runIsingSystem(seed int64, wg *sync.WaitGroup, systemID int) {
 // }
 
 func main() {
-	isingSystem := NewIsingSystem(40, 1, true)
-	systemViewer := NewSystemViewer(isingSystem, 40, 5)
-	pixelgl.Run(systemViewer.Run)
+	isingSystem := NewIsingSystem(20, 1, true)
+	// systemViewer := NewSystemViewer(isingSystem, 40, 5)
+	// pixelgl.Run(systemViewer.Run)
 
 	for i := 0; i < 10; i++ {
+		time.Sleep(500 * time.Millisecond)
 		isingSystem.Update()
+		isingSystem.DisplayGrid()
 	}
 }

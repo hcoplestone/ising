@@ -39,30 +39,31 @@ func (viewer *SystemViewer) Run() {
 		panic(err)
 	}
 
-	imd := imdraw.New(nil)
-
-	for colIndex, column := range viewer.system.grid {
-		for rowIndex, row := range column {
-			bottomLeftX := float64(rowIndex*viewer.spinSize + viewer.fakeOrigin)
-			topRightX := float64((rowIndex+1)*viewer.spinSize + viewer.fakeOrigin)
-
-			bottomLeftY := float64(colIndex*viewer.spinSize + viewer.fakeOrigin)
-			topRightY := float64((colIndex+1)*viewer.spinSize + viewer.fakeOrigin)
-
-			if row == 1 {
-				imd.Color = pixel.RGB(0, 0, 1)
-			} else {
-				imd.Color = pixel.RGB(0, 1, 0)
-			}
-
-			imd.Push(pixel.V(bottomLeftX, bottomLeftY))
-			imd.Push(pixel.V(topRightX, topRightY))
-			imd.Rectangle(0)
-		}
-	}
-
 	for !win.Closed() {
 		// win.Clear(colornames.Black)
+
+		imd := imdraw.New(nil)
+
+		for colIndex, column := range viewer.system.grid {
+			for rowIndex, row := range column {
+				bottomLeftX := float64(rowIndex*viewer.spinSize + viewer.fakeOrigin)
+				topRightX := float64((rowIndex+1)*viewer.spinSize + viewer.fakeOrigin)
+
+				bottomLeftY := float64(colIndex*viewer.spinSize + viewer.fakeOrigin)
+				topRightY := float64((colIndex+1)*viewer.spinSize + viewer.fakeOrigin)
+
+				if row == 1 {
+					imd.Color = pixel.RGB(0, 0, 1)
+				} else {
+					imd.Color = pixel.RGB(0, 1, 0)
+				}
+
+				imd.Push(pixel.V(bottomLeftX, bottomLeftY))
+				imd.Push(pixel.V(topRightX, topRightY))
+				imd.Rectangle(0)
+			}
+		}
+
 		imd.Draw(win)
 		win.Update()
 	}

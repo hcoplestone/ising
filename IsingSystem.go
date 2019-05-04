@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"os/exec"
 )
 
 // IsingSystem represents a closed system for running MC Ising Model simulations
@@ -16,6 +18,11 @@ type IsingSystem struct {
 	randomGenerator    *RandomGenerator
 	initialTemperature float64
 	beta               float64
+}
+
+type Position struct {
+	i int
+	j int
 }
 
 // NewIsingSystem initialises a new Insing Model simulation
@@ -57,9 +64,22 @@ func (system *IsingSystem) SetTemperature(temperature float64) {
 	system.beta = 1 / temperature
 }
 
+// SetGrid assigns the value of grid[i][j] to value
+func (system *IsingSystem) SetGrid(position *Position, value int) {
+	system.grid[position.i][position.j] = value
+}
+
+// ReadGrid returns the value of the grid position (i ,j)
+func (system *IsingSystem) ReadGrid(position *Position) int {
+	return system.grid[position.i][position.j]
+}
+
 // DisplayGrid prints grid to stdout
 func (system *IsingSystem) DisplayGrid() {
-	fmt.Printf("\n")
+	cmd := exec.Command("clear") //Linux example, its tested
+	cmd.Stdout = os.Stdout
+	cmd.Run()
+	// fmt.Printf("\n")
 	for _, column := range system.grid {
 		for _, row := range column {
 			if row == 1 {

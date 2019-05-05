@@ -37,9 +37,9 @@ type Position struct {
 }
 
 // NewIsingSystem initialises a new Insing Model simulation
-func NewIsingSystem(gridSize int, seed int64, verbose bool) *IsingSystem {
+func NewIsingSystem(gridSize int, initialTemperature float64, seed int64, verbose bool) *IsingSystem {
 	system := new(IsingSystem)
-	system.initialTemperature = 4.0
+	system.initialTemperature = initialTemperature
 
 	system.gridSize = gridSize
 	system.verbose = verbose
@@ -92,7 +92,8 @@ func (system *IsingSystem) DisplayGrid() {
 	cmd := exec.Command("clear") //Linux example, its tested
 	cmd.Stdout = os.Stdout
 	cmd.Run()
-	fmt.Printf("beta = %e \n", system.beta)
+	// fmt.Printf("beta = %e  M = %e \n", system.beta, system.ComputeMagnetisation())
+	fmt.Printf("beta = %f  M = %f  E/J = %f \n", system.beta, system.ComputeMagnetisation(), system.ComputeDimensionlessSystemEnergy())
 	for _, column := range system.grid {
 		for _, row := range column {
 			if row == 1 {
@@ -130,6 +131,7 @@ func (system *IsingSystem) DeterminePositionOfNeighbouringCell(initialPosition *
 }
 
 // ComputeLocalFieldDividedByTemperature returns the local magnetic field for the spin at the specified position divided by the temperature
+// i.e. returns (1/kT) * h_i === (1/T_0*J) * h_i
 func (system *IsingSystem) ComputeLocalFieldDividedByTemperature(position *Position) float64 {
 	sumOfNearestNeighbourSpins := float64(0.0)
 	for direction := 0; direction < 4; direction++ {
@@ -137,6 +139,42 @@ func (system *IsingSystem) ComputeLocalFieldDividedByTemperature(position *Posit
 		sumOfNearestNeighbourSpins += float64(system.ReadGrid(&nearestNeighbourPosition))
 	}
 	return sumOfNearestNeighbourSpins * system.beta
+}
+
+// ComputeDimensionlessEnergyOfGridLocation computes (E_i)/J For a given grid location, i
+// Dimensionless energy = -S_i * [sum over j nearest neighbours](s_j)
+func (system *IsingSystem) ComputeDimensionlessEnergyOfGridLocation(position *Position) float64 {
+	sumOfNearestNeighbourSpins := 0
+	for direction := 0; direction < 4; direction++ {
+		nearestNeighbourPosition := system.DeterminePositionOfNeighbouringCell(position, direction)
+		sumOfNearestNeighbourSpins += system.ReadGrid(&nearestNeighbourPosition)
+	}
+	spinAtGridLocation := system.ReadGrid(position)
+	return float64(-1 * spinAtGridLocation * sumOfNearestNeighbourSpins)
+}
+
+// ComputeDimensionlessSystemEnergy computes the dimensionless energy of the system (E/J)
+func (system *IsingSystem) ComputeDimensionlessSystemEnergy() float64 {
+	sumOfIndividualGridPointEnergies := 0.0
+	for i := 0; i < system.gridSize; i++ {
+		for j := 0; j < system.gridSize; j++ {
+			sumOfIndividualGridPointEnergies += system.ComputeDimensionlessEnergyOfGridLocation(&Position{i, j})
+		}
+	}
+	systemEnergy := 0.5 * sumOfIndividualGridPointEnergies
+	return systemEnergy
+}
+
+// ComputeMagnetisation computes the magnetiation (per spin)
+func (system *IsingSystem) ComputeMagnetisation() float64 {
+	sumOfSpins := 0
+	for _, column := range system.grid {
+		for _, row := range column {
+			sumOfSpins += row
+		}
+	}
+	magnetisation := float64(sumOfSpins) / float64(system.gridSize*system.gridSize)
+	return magnetisation
 }
 
 // FlipSpin flips the spin at grid position (i, j)

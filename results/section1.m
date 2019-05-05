@@ -46,8 +46,14 @@ for beta = betaLowerLim:betaStep:betaUpperLim
 end
 
 legend_handle = legend('-DynamicLegend');
+legend_handle.FontSize = 22;
+legend_handle.Orientation = 'horizontal';
+legend_handle.Location = 'northoutside';
 set(legend_handle,'Interpreter','latex')
 legend('show');
+
+ax = gca();
+ax.FontSize = 15;
 
 hold off;
 xlabel('Number of sweeps', 'FontSize', 16);

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  5 MAY 2019 19:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  5 MAY 2019 20:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -704,84 +704,57 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<images/section1/magnetisation.png, id=52, 2569.6pt x 1413.28pt>
-File: images/section1/magnetisation.png Graphic file (type png)
-
-<use images/section1/magnetisation.png>
-Package pdftex.def Info: images/section1/magnetisation.png used on input line 7
-6.
-(pdftex.def)             Requested size: 480.0pt x 263.99736pt.
- [1
+) [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<images/section1/energy.png, id=71, 2192.19pt x 1353.055pt>
-File: images/section1/energy.png Graphic file (type png)
 
-<use images/section1/energy.png>
-Package pdftex.def Info: images/section1/energy.png used on input line 83.
-(pdftex.def)             Requested size: 480.0pt x 296.24844pt.
-
-<images/section2/transients.png, id=72, 1124.2pt x 843.15pt>
-File: images/section2/transients.png Graphic file (type png)
-
-<use images/section2/transients.png>
-Package pdftex.def Info: images/section2/transients.png used on input line 92.
-(pdftex.def)             Requested size: 480.0pt x 360.00008pt.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `subscript' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 98.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `math shift' on input line 96.
 
 No file compb2.bbl.
-[2 <./images/section1/magnetisation.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <./images/section1/energy.png (PNG copy)>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./images/section2/transients.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./compb2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `compb2.out' has not changed.
-(rerunfilecheck)             Checksum: 992D3B4BA54E91C8D364C8CA207DDE6A;778.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
+(rerunfilecheck)             Checksum: 04CD126542EDC39EDD72BA867A16B781;592.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 17492 strings out of 493014
- 327409 string characters out of 6133350
- 395081 words of memory out of 5000000
- 20717 multiletter control sequences out of 15000+600000
+ 17463 strings out of 493014
+ 326739 string characters out of 6133350
+ 394970 words of memory out of 5000000
+ 20697 multiletter control sequences out of 15000+600000
  10130 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,890b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,96p,890b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on compb2.pdf (4 pages, 371685 bytes).
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on compb2.pdf (2 pages, 143089 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

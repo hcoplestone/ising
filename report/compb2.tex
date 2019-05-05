@@ -49,7 +49,7 @@ Although the coursework was initially presented as a C++ project, I took the lib
 \section{Introduction and Computational Method}
 Ferromagnetism is the property of a material to exhibit speontaneous magnetisation in the absence of an external magnetic field. The Ising Model is a mathematical model that uses the results of thermodynamics and statistical mechanics to describe how magnetic structure in some metals leads to ferromagnetism.
 
-In the Ising Model presented in this paper, a magnetic material is modelled by a regular $N$ x $N$ dimensional square lattice $\Pi$. A given grid point on this lattice $\pi_{(i,j)} \in \Pi$ is indexed by cartesian coordinates $(i, j)$ where $i, j \in [0, N]$. These coordinates are not strictly unique as periodic boundary conditions are applied so that a closed system is modelled. This is to say the grid follows the mappings $(i + \Lambda_i N, j + \Lambda_j N) \to (i, j)$ for $\Lambda_i, \Lambda_j \in \mathbb{Z}$. Each grid point $\pi_{(i, j)} \in \Pi$ on this square lattice is assigned a discrete variable  $s_{(i, j)} \in \{0, 1\}$ that corresponds to the spin of the grid point. We arbitrarily define $s_{(i, j)} = 1$ to represent 'spin up' and $s_{(i,j)} = -1$ to represent 'spin down'.
+In the Ising Model presented in this paper, a magnetic material is modelled by a regular $L$ x $L$ dimensional square lattice $\Pi$. A given grid point on this lattice $\pi_{(i,j)} \in \Pi$ is indexed by cartesian coordinates $(i, j)$ where $i, j \in [0, L]$. These coordinates are not strictly unique as periodic boundary conditions are applied so that a closed system is modelled. This is to say the grid follows the mappings $(i + \Lambda_i D, j + \Lambda_j D) \to (i, j)$ for $\Lambda_i, \Lambda_j \in \mathbb{Z}$. Each grid point $\pi_{(i, j)} \in \Pi$ on this square lattice is assigned a discrete variable  $s_{(i, j)} \in \{0, 1\}$ that corresponds to the spin of the grid point. The system is therefore composed of $N \equiv L^2$ spins. We arbitrarily define $s_{(i, j)} = 1$ to represent 'spin up' and $s_{(i,j)} = -1$ to represent 'spin down'.
 
 For a given grid point $\pi_{(i, j)}$, the convention of nearest neighbours is defined as representing the grid points directly adjacent to the grid point, both vertically and horizontally. Using this convention, the energy of a given spin on the grid is defined by
 \begin{equation}
@@ -61,43 +61,40 @@ h_{(i, j)} = \sum_{(\alpha, \beta) \; \textrm{\small{n.n. of}} \; (i, j)} \left[
 \end{equation}
 Here "n.n" represents a sum over the nearest neighbours and $J$ is a positive real number that indicates the strength of the interactions between spins. Qualitatively this set of equations defines the energy of a given spin as the sum of the interaction energies between the spin and it's nearest neighbours, where the interaction energy between two nearest neighbour spins is defined to be $-J$ if the two spins are aligned and $-J$ if the two spins are antiparallel.
 
+From this definition of the energy for a single spin in the system, the total energy for the system is defined as
+\begin{equation}
+\label{eq:systemenergy}
+E = \frac{1}{2} \sum_{i, j} E_{(i, j)}
+\end{equation}
+where the summation simply runs over every grid point in the square lattice.
+Furthermore, the magnetisation (per spin) of the system is defined as
+\begin{equation}
+\mathcal{M} = \frac{1}{N} \sum_{i, j} s_{(i, j)}
+\end{equation}
+
+As the number of spins in the system is fixed, a canonical thermodynamic ensemble is used. If we let a microstate $\mathcal{S}$ be defined by the instantaneous configuration of all the spins in the system, then the probability of finding the system in a microstate $S$ in thermal equilibrium at temperature $T$ is given by statistical mechanics as
+\begin{equation}
+p_{eq}(\mathcal{S}) = \frac{1}{Z(T)} e^{-E(S)/k_B T}
+\end{equation}
+where $E(S)$ is the energy of microstate $S$ as given by equation (\ref{eq:systemenergy}). The canonical partition function $Z = Z(T)$ is used to enforce the normalisation condition $\sum_S{p_{eq}(S)} = 1$ which gives the expression for $Z$ as
+\begin{equation}
+Z(T) = \sum_{S} e^{-E(S)/k_B T}
+\end{equation}
+where the summations here run over all $2^N$ possible microstates $S$ of the system.
+
+In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$.  
+
 \section{Method}
-
-\subsection{Random Walks and Ensemble Averaging}
-
-\subsection{Determining the Fractal Dimension of DLA Aggregates}
 
 \section{Results}
 
 \subsection{Convergence to Equilibrium}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{images/section1/magnetisation.png}
-  \caption{Convergence to equilibrium}
-  \label{fig:magnetisationsection1}
-\end{figure}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{images/section1/energy.png}
-  \caption{Convergence to equilibrium}
-  \label{fig:energysection1}
-\end{figure}
-
 \subsection{Measuring Equilibrium Averages}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{images/section2/transients.png}
-  \caption{Transient behaviour of system}
-  \label{fig:transients}
-\end{figure}
 
 \section{Discussion}
 \subsection{Determining the Fractal Dimension of DLA Aggregates where $p_{stick} = 1$}
 \subsection{Suggestions for Improvement}
-
 
 \section{Conclusion}
 

@@ -106,12 +106,15 @@ In this paper, a Metropolis Monte Carlo method is used to investigate the proper
 
 Instead of calculating averages using an ensemble average as is conventional for statistical mechanical systems, it is in most cases also possible to calculate an average $\langle \Gamma \rangle$ for a quantity of interest $\Gamma$ by taking a time average of that value. This is the principle of the ergodic hypothesis of thermodynamics \cite{statmech}.  For the case of a simulated Ising system, this means that average values can be determined by running a single simulation for a period of time as opposed to running many distinct simulations of that one system. In this way, the average value $\langle \Gamma \rangle$ is determined by taking $n$ samples of $\Gamma$ over a period of time $\{ \Gamma_i \}_{i=1}^{n}$. The average value is then calculated by
 \begin{equation}
+\label{eq:averages}
 \langle \Gamma \rangle = \frac{1}{n}\sum_{i=1}^{n} \Gamma_i
 \end{equation}
 For independent measurements, then the uncertainty in this average is estimated well by the standard error
 \begin{equation}
 \bar{\sigma}_{\Gamma} = \frac{1}{\sqrt{n-1}} \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( \Gamma_i - \langle \Gamma \rangle \right)^2 }
 \end{equation}
+
+When calculating equilibrium averages for properties of an Ising system, it is important to ensure the system has reached thermodynamic equilibrium before starting to take samples of the quantity being averaged. For all equilibrium averages presented in this paper, an integer $n_0$ of Monte Carlo cycles are waited before samples are contributed to an average. This is to give the system time to evolve through it's initial transient behaviour as the system changes from it's initial all spin down configuration to a state of equilibrium.
 
 \section{Results}
 
@@ -139,10 +142,11 @@ Figure \ref{fig:equilibriumaverages} shows averages of quantities of interest as
 
 \begin{figure}[t]
     \centering
-    \subfloat[Average magnetisation per spin]{{\includegraphics[width=8.11cm]{images/section2/magnetisation.png} }}\quad
-     \subfloat[Average dimensionless energy per spin]{{\includegraphics[width=8.11cm]{images/section2/energy.png} }}\
+    \subfloat[Average magnetisation per spin]{{\includegraphics[width=8.11cm]{images/section2/magnetisationtime.png} }}\quad
+     \subfloat[Average dimensionless energy per spin]{{\includegraphics[width=8.11cm]{images/section2/energytime.png} }}\
+          \subfloat[Average absolute magnetisation per spin]{{\includegraphics[width=8.11cm]{images/section2/absmagnetisation.png} }}\
  
-    \caption{Averages of quantities of interest as a function of $\beta$ for an Ising system in thermal equilibrium. (a) shows average magnetisation per spin $\langle\mathcal{M}\rangle$ vs $\beta$. (b) shows average dimensionless energy per spin $\langle\frac{E}{NJ}\rangle$ vs $\beta$. (c) shows average absolute magnetisation per spin $\langle|\mathcal{M}|\rangle$ vs $\beta$.}
+    \caption{Averages of quantities of interest as a function of dimensionless temperature $T_0$ for an Ising system in thermal equilibrium. (a) shows average magnetisation per spin $\langle\mathcal{M}\rangle$ vs $T_0$. (b) shows average dimensionless energy per spin $\langle\frac{E}{NJ}\rangle$ vs $T_0$. (c) shows average absolute magnetisation per spin $\langle|\mathcal{M}|\rangle$ vs $T_0$.}
     \label{fig:equilibriumaverages}
 \end{figure}
 

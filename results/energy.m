@@ -10,6 +10,8 @@ m = (200000 - n0)/n
 
 AverageMagnetisations = [];
 AverageMagnetisationsErrors = [];
+AverageAbsoluteMagnetisations = [];
+AverageAbsoluteMagnetisationsErrors = [];
 AverageEnergies = [];
 AverageEnergiesErrors = [];
 
@@ -28,16 +30,20 @@ for file = dir('awesome/*.csv')'
     Ts = [Ts Temp(1)]
         
     magnetisations = Magnetisation(n0:n:(n0+n*m));
+    absolutemagnetisations = abs(magnetisations);
     energies = DimensionlessEnergy(n0:n:(n0+n*m));
     energies = energies ./ (40*40);
     
     AverageMagnetisations = [AverageMagnetisations mean(magnetisations)];
+    AverageAbsoluteMagnetisations = [AverageAbsoluteMagnetisations mean(absolutemagnetisations)];
     AverageEnergies = [AverageEnergies mean(energies)];
     
     ErrorMagnetisation = std(magnetisations) / sqrt(length(magnetisations) - 1);
+    ErrorAbsoluteMagnetisation = std(absolutemagnetisations) / sqrt(length(absolutemagnetisations) - 1);
     ErrorEnergy = std(energies) / sqrt(length(energies) - 1);
 
     AverageMagnetisationsErrors = [AverageMagnetisationsErrors ErrorMagnetisation];
+    AverageAbsoluteMagnetisationsErrors = [AverageAbsoluteMagnetisationsErrors ErrorAbsoluteMagnetisation];
     AverageEnergiesErrors = [AverageEnergiesErrors ErrorEnergy];
 end
 
@@ -53,6 +59,12 @@ figure;
 errorbar(Ts, AverageMagnetisations, AverageMagnetisationsErrors, '.')
 xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
 ylabel('$<\mathcal{M}>$', 'Interpreter', 'latex', 'FontSize', 16);
+
+figure;
+% plot(Ts, AverageMagnetisations, '.-')
+errorbar(Ts, AverageAbsoluteMagnetisations, AverageAbsoluteMagnetisationsErrors, '.')
+xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
+ylabel('$<|\mathcal{M}|>$', 'Interpreter', 'latex', 'FontSize', 16);
 
 % ylim([-1, 0.2])
 

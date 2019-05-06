@@ -37,7 +37,7 @@ end
 plot(1./(betas/100), AverageMagnetisations, 'x-')
 
 hold off;
-xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
+xlabel('$\T$', 'Interpreter', 'latex', 'FontSize', 16);
 ylabel('$<\mathcal{M}>$', 'Interpreter', 'latex', 'FontSize', 16);
 % ylim([-1, 0.2])
 

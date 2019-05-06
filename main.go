@@ -42,13 +42,13 @@ import (
 // 	fmt.Printf("System finished - sub system %d - beta = %f\n", subSystemID, initialBeta)
 // }
 
-func runIsingSystem(initialBeta float64, numberOfSweeps int, seed int64, wg *sync.WaitGroup, subSystemID int) {
+func runIsingSystem(initialTemp float64, numberOfSweeps int, seed int64, wg *sync.WaitGroup, subSystemID int) {
 	defer wg.Done()
 
-	initialTemperature := 1 / initialBeta
-	system := NewIsingSystem(40, initialTemperature, seed, false)
+	// initialTemperature := 1 / initialBeta
+	system := NewIsingSystem(40, initialTemp, seed, false)
 
-	filenameComponents := []string{"results/awesome/beta-", strconv.Itoa(int(initialBeta * 1000)), "-system", strconv.Itoa(subSystemID), ".csv"}
+	filenameComponents := []string{"results/awesome/temp-", strconv.Itoa(int(initialTemp * 1000)), "-system", strconv.Itoa(subSystemID), ".csv"}
 	csvFilename := strings.Join(filenameComponents, "")
 
 	f, err := os.OpenFile(csvFilename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -78,12 +78,12 @@ func main() {
 	ensembleCount := 1
 
 	// numberOfSweeps := 1000000
-	numberOfSweeps := 100000
+	numberOfSweeps := 200000
 	// betaStep := 0.001
 	// betaLowerLimit := 0.25
 	// betaUpperLimit := 1.0 + betaStep
 
-	tempStep := 0.01
+	tempStep := 0.005
 	tempLowerLimit := 1.0
 	tempUpperLimit := 4.0 + tempStep
 
@@ -96,9 +96,8 @@ func main() {
 	for ensembleSubSystem := 0; ensembleSubSystem < ensembleCount; ensembleSubSystem++ {
 		for temp := tempLowerLimit; temp <= tempUpperLimit; temp = temp + tempStep {
 			wg.Add(1)
-			beta := 1.0 / temp
-			fmt.Printf("Starting system - sub system %d - beta = %f\n", ensembleSubSystem, beta)
-			go runIsingSystem(beta, numberOfSweeps, int64(ensembleSubSystem), &wg, ensembleSubSystem)
+			fmt.Printf("Starting system - sub system %d - temp = %f\n", ensembleSubSystem, temp)
+			go runIsingSystem(temp, numberOfSweeps, int64(ensembleSubSystem), &wg, ensembleSubSystem)
 		}
 	}
 

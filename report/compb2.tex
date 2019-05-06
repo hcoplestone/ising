@@ -28,7 +28,7 @@ Although the coursework was initially presented as a C++ project, I took the lib
 %Makes TODO notes format properly in margin
 \setlength{\marginparwidth}{1.5cm}
 
-\title[]{Comparison of Curie-Weiss Theory and Computation Metropolis Monte-Carlo Simulations for Modelling Phase Transitions in Ferromagnets using a 2-Dimensional Ising Model}
+\title[]{Comparison of Curie-Weiss Theory and Computation Metropolis Monte-Carlo Simulations for Modelling Phase Transitions in Ferromagnets using a Two-Dimensional Ising Model}
 
 \author{Candidate Number: 21594}
 
@@ -51,16 +51,14 @@ TODO
 %\maketitle
 
 \section{Introduction and Computational Method}
-Ferromagnetism is the property of a material to exhibit speontaneous magnetisation in the absence of an external magnetic field. The Ising Model is a mathematical model that uses the results of thermodynamics and statistical mechanics to describe how magnetic structure in some metals leads to ferromagnetism \cite{handout}.
-
-In the Ising Model presented in this paper, a magnetic material is modelled by a regular $L$ x $L$ dimensional square lattice $\Pi$. A given grid point on this lattice $\pi_{(i,j)} \in \Pi$ is indexed by cartesian coordinates $(i, j)$ where $i, j \in [0, L]$. These coordinates are not strictly unique as periodic boundary conditions are applied so that a closed system is modelled. This is to say the grid follows the mappings $(i + \Lambda_i D, j + \Lambda_j D) \to (i, j)$ for $\Lambda_i, \Lambda_j \in \mathbb{Z}$. Each grid point $\pi_{(i, j)} \in \Pi$ on this square lattice is assigned a discrete variable  $s_{(i, j)} \in \{0, 1\}$ that corresponds to the spin of the grid point. The system is therefore composed of $N \equiv L^2$ spins. We arbitrarily define $s_{(i, j)} = 1$ to represent 'spin up' and $s_{(i,j)} = -1$ to represent 'spin down'.
+Ferromagnetism is the property of a material to exhibit speontaneous magnetisation in the absence of an external magnetic field. The Ising Model is a mathematical model that uses the results of thermodynamics and statistical mechanics to describe how magnetic structure in some metals leads to ferromagnetism \cite{handout}. In the Ising Model presented in this paper, a magnetic material is modelled by a regular $L$ x $L$ dimensional square lattice $\Pi$. A given grid point on this lattice $\pi_{(i,j)} \in \Pi$ is indexed by cartesian coordinates $(i, j)$ where $i, j \in [0, L]$. These coordinates are not strictly unique as periodic boundary conditions are applied so that a closed system is modelled. This is to say that the grid follows the mappings $(i + \Lambda_i D, j + \Lambda_j D) \to (i, j)$ for $\Lambda_i, \Lambda_j \in \mathbb{Z}$. Each grid point $\pi_{(i, j)}$ on this square lattice is assigned a discrete variable  $s_{(i, j)} \in \{0, 1\}$ that corresponds to the spin of the grid point. The system is therefore composed of $N \equiv L^2$ spins. We arbitrarily define $s_{(i, j)} = 1$ to represent 'spin up' and $s_{(i,j)} = -1$ to represent 'spin down'.
 \begin{figure}[b]
   \centering
   \includegraphics[width=0.10\linewidth]{images/nearestneighbour/4x/nearestneighbour@4x.png}
   \caption{Each dot represents a grid point on the square lattice $\Pi$. The central black grid point represents the grid point $\pi_{(i, j)}$. The blue grid points represent the nearest neighbours of $\pi_{(i, j)}$. The white grid points represent points that are not considered nearest neighbours.}
   \label{fig:nearestneighbours}
 \end{figure}
-For a given grid point $\pi_{(i, j)}$, the convention of nearest neighbours is defined as representing the grid points directly adjacent to the grid point, both vertically and horizontally, as shown in Figure \ref{fig:nearestneighbours}. Using this convention, the energy of a given spin on the grid is defined by
+For a given grid point $\pi_{(i, j)}$, the convention of nearest neighbours is defined as representing the grid points directly adjacent to $\pi_{(i,j)}$, both vertically and horizontally, as shown in Figure \ref{fig:nearestneighbours}. Using this convention, the energy of a given spin on the grid is defined as \cite{handout}
 \begin{equation}
 E_{(i, j)} = -h_{(i, j)} s_{(i, j)}
 \end{equation}
@@ -68,7 +66,7 @@ where
 \begin{equation}
 h_{(i, j)} = \sum_{(\alpha, \beta) \; \textrm{\small{n.n. of}} \; (i, j)} \left[ J  s_{(\alpha, \beta)} \right]
 \end{equation}
-Here "n.n" represents a sum over the nearest neighbours and $J$ is a positive real number with dimensions of energy that indicates the strength of the interactions between spins. Qualitatively this set of equations defines the energy of a given spin as the sum of the interaction energies between the spin and it's nearest neighbours, where the interaction energy between two nearest neighbour spins is defined to be $-J$ if the two spins are aligned and $+J$ if the two spins are antiparallel, as shown in Figure \ref{fig:spinalignment}.
+Here "n.n" represents a sum over nearest neighbours and $J$ is a positive real number with dimensions of energy that indicates the strength of the interactions between spins. Qualitatively, this set of equations defines the energy of a given spin as the sum of the interaction energies between the spin and it's nearest neighbours, where the interaction energy between two nearest neighbour spins is defined to be $-J$ if the two spins are aligned and $+J$ if the two spins are antiparallel \cite{handout}, as shown in Figure \ref{fig:spinalignment}.
 
 From this definition of the energy for a single spin in the system, the total energy for the system is defined as
 \begin{equation}
@@ -99,15 +97,15 @@ Z(T) = \sum_{S} e^{-E(S)/k_B T}
 \end{equation}
 where the summations here run over all $2^N$ possible microstates $S$ of the system.
 
-In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$. In the interest of being concise, for details on how the Metropolis Monte Carlo method works and is implemented, I refer the reader to standard literature \cite{montecarlo} as this is a common and well studied algorithm for sampling phase spaces with defined probability distributions such as given by equation (\ref{eq:probabilitydist}). In addition, we compare computational results with those given by a mean-field theory, the derivation and results of which are described in \cite{handout} and, in more detail, the chapter 'Phase Transitions and Critical Phenomena' of \cite{meanfield}.
+In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$. In the interest of being concise, for details on how the Metropolis Monte Carlo method works and is implemented, I refer the reader to standard literature \cite{montecarlo}. In addition, we compare computational results with those given by a Curie-Weiss (mean-field) theory, the derivation and results of which are described in \cite{handout} and, in more detail, the chapter 'Phase Transitions and Critical Phenomena' of \cite{meanfield}.
 
-It is important to note that in the computational simulations used in this paper, the Ising systems are characterised by a dimensionless temperature $T_0 \equiv \frac{T k_B}{J}$. From this, we define the inverse dimensionless temperatures $\beta \equiv \frac{1}{T_0}$.
+It is important to note that, in the computational simulations used in this paper, the Ising systems are characterised by a dimensionless temperature $T_0 \equiv \frac{T k_B}{J}$. From this, we define the inverse dimensionless temperature $\beta \equiv \frac{1}{T_0}$.
 
 \section{Method}
 
 \subsection{Calculating Equilibrium Averages}
 
-Instead of calculating averages using an ensemble average as is conventional for statistical mechanical systems, it is in most cases also possible to calculate an average $\langle \Gamma \rangle$ for a quantity of interest $\Gamma$ by taking a time average, where time is proportional to the number of Monte Carlo sweeps completed in our case. This is the principle of the ergodic hypothesis of thermodynamics \cite{statmech}.  For the case of a simulated Ising system, this means that average values can be determined by running a single simulation for a period of time as opposed to running many distinct simulations of that one system. In this way, an average value $\langle \Gamma \rangle$ is determined by taking $n$ samples $\{ \Gamma_i \}_{i=1}^{n}$ over a period of time. The average value is then calculated by
+Instead of calculating averages using an ensemble average as is conventional for statistical mechanical systems, it is in most cases also possible to calculate an average $\langle \Gamma \rangle$ for a quantity of interest $\Gamma$ by taking a time average, where time is proportional to the number of Monte Carlo sweeps completed in our case. This is the ergodic hypothesis of thermodynamics \cite{statmech}.  For the case of a simulated Ising system, this means that average values can be determined by running a single simulation for a period of time as opposed to running many distinct simulations of that one system. In this way, an average value $\langle \Gamma \rangle$ is determined by taking $n$ samples $\{ \Gamma_i \}_{i=1}^{n}$ over a period of time. The average value is then calculated by
 \begin{equation}
 \label{eq:averages}
 \langle \Gamma \rangle = \frac{1}{n}\sum_{i=1}^{n} \Gamma_i
@@ -199,9 +197,12 @@ Figure \ref{fig:derivedproperties} shows quantities derived from the data shown 
 For cases where the system evolves into a state with $\mathcal{M} = 0$, which is characterised by the system being in a state with approximately half the spins up and half the spins down, Figure \ref{fig:convergencegraphs} (a) shows that an inverse temperature of $\beta = 0.3$ takes longer to converge to this equilibrium state than $\beta = 0.2$.
 
 \subsection{Equilibrium Averages}
-Figure \ref{fig:equilibriumaverages} (a) shows an increase in system magnetisation from an initial value of $-1$ to approximately $-0.8$ as $T_0$ is increased from $1$ to approximately 2.3. This corresponds to the system transitioning from an initial perfectly ferromagnetic order with all spins down to more energetic states with ferrimagnetic order where some spins are up but the majority are still down, resulting in a net negative magnetisation. The simulated Ising model then almost-perfectly captures a phase transition at a critical dimensionless temperature of $T_{0,c} \approx 2.3$, at which point the system almost instantaneously assumes paramagnetic order for which $\mathcal{M} = 0$ in the absence of an external magnetic field. For all temperatures greater than this critical temperature, no change in magnetisation is exhibited. Note somewhat weird behaviour is exhibited during the phase transition where the magnetisation appears to diverge and becomes greater than 0. This could be physical or could simply be that the system is so chaotic during this transition that Monte Carlo averaging breaks down and fails to capture the true behaviour of the system. Although a discontinuity exists in the magnetisation, the system's energy increases continuously across the critical region, as physically expected!
+Figure \ref{fig:equilibriumaverages} (a) shows an increase in system magnetisation from an initial value of $-1$ to approximately $-0.8$ as $T_0$ is increased from $1$ to approximately 2.3. This corresponds to the system transitioning from an initial perfectly ferromagnetic order with all spins down to more energetic states with ferrimagnetic order where some spins are up but the majority are still down, resulting in a net negative magnetisation. The simulated Ising model then almost-perfectly captures a phase transition at a critical dimensionless temperature of $T_{0,c} \approx 2.3$, at which point the system almost instantaneously assumes paramagnetic order for which $\mathcal{M} = 0$ in the absence of an external magnetic field. For all temperatures greater than this critical temperature, no change in magnetisation is exhibited. Note somewhat weird behaviour is exhibited during the phase transition where the magnetisation appears to diverge and becomes greater than 0. This could be physical or could simply be that the system is so chaotic during this transition that Monte Carlo averaging breaks down and fails to capture the true behaviour of the system. Additionally, although a discontinuity exists in the magnetisation during the phase transition, the system's energy increases continuously during the transition, as physically expected!
 
 \subsection{Comparison with Mean-Field Theory}
+
+
+\subsection{Derivative Quantities}
  
  \subsection{Suggestions for Improvement}
  When calculating averages in 

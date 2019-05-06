@@ -93,13 +93,15 @@ As the number of spins in the system is fixed, a canonical thermodynamic ensembl
 \label{eq:probabilitydist}
 p_{eq}(\mathcal{S}) = \frac{1}{Z(T)} e^{-E(S)/k_B T}
 \end{equation}
-where $E(S)$ is the energy of microstate $S$ as given by equation (\ref{eq:systemenergy}). The canonical partition function $Z = Z(T)$ is used to enforce the normalisation condition $\sum_S{p_{eq}(S)} = 1$ which gives the expression for $Z$ as
+where $E(S)$ is the energy of microstate $S$ as given by equation (\ref{eq:systemenergy}) and $k_B$ is the Boltzmann constant. The canonical partition function $Z = Z(T)$ is used to enforce the normalisation condition $\sum_S{p_{eq}(S)} = 1$ which gives the expression for $Z$ as
 \begin{equation}
 Z(T) = \sum_{S} e^{-E(S)/k_B T}
 \end{equation}
 where the summations here run over all $2^N$ possible microstates $S$ of the system.
 
 In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$. In the interest of being concise, for details on how the Metropolis Monte Carlo method works and is implemented, I refer the reader to standard literature \cite{montecarlo} as this is a common and well studied algorithm for sampling phase spaces with defined probability distributions such as given by equation (\ref{eq:probabilitydist}).
+
+It is important to note that in the computational simulations used in this paper, the Ising systems are characterised by a dimensionless temperature $T_0 \equiv \frac{T k_B}{J}$. From this, we define the inverse dimensionless temperatures $\beta \equiv \frac{1}{T_0}$.
 
 \section{Method}
 
@@ -134,7 +136,7 @@ c = \frac{1}{N k_B T^2} \textrm{Var}(E)
 \begin{equation}
 \chi = \frac{N}{k_B T} \textrm{Var}({\mathcal{M}})
 \end{equation}
-where $k_B$ is the Boltzmann constant, $T$ is the thermodynamic temperature of the Ising system and $\textrm{Var}(E)$ and $\textrm{Var}(\mathcal{M})$ refer to the variance of the system energy and magnetisation respectively.
+where $T$ is the thermodynamic temperature of the Ising system and $\textrm{Var}(E)$ and $\textrm{Var}(\mathcal{M})$ refer to the variance of the system energy and magnetisation respectively.
 
 \section{Results}
 

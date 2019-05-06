@@ -48,7 +48,7 @@ func runIsingSystem(initialBeta float64, numberOfSweeps int, seed int64, wg *syn
 	initialTemperature := 1 / initialBeta
 	system := NewIsingSystem(40, initialTemperature, seed, false)
 
-	filenameComponents := []string{"results/section2final/beta-", strconv.Itoa(int(initialBeta * 100)), "-system", strconv.Itoa(subSystemID), ".csv"}
+	filenameComponents := []string{"results/section2final3/beta-", strconv.Itoa(int(initialBeta * 1000)), "-system", strconv.Itoa(subSystemID), ".csv"}
 	csvFilename := strings.Join(filenameComponents, "")
 
 	f, err := os.OpenFile(csvFilename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -77,8 +77,9 @@ func runIsingSystem(initialBeta float64, numberOfSweeps int, seed int64, wg *syn
 func main() {
 	ensembleCount := 1
 
-	numberOfSweeps := 1000000
-	betaStep := 0.05
+	// numberOfSweeps := 1000000
+	numberOfSweeps := 200000
+	betaStep := 0.001
 	betaLowerLimit := 0.25
 	betaUpperLimit := 1.0 + betaStep
 

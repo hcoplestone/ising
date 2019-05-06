@@ -53,7 +53,14 @@ Ferromagnetism is the property of a material to exhibit speontaneous magnetisati
 
 In the Ising Model presented in this paper, a magnetic material is modelled by a regular $L$ x $L$ dimensional square lattice $\Pi$. A given grid point on this lattice $\pi_{(i,j)} \in \Pi$ is indexed by cartesian coordinates $(i, j)$ where $i, j \in [0, L]$. These coordinates are not strictly unique as periodic boundary conditions are applied so that a closed system is modelled. This is to say the grid follows the mappings $(i + \Lambda_i D, j + \Lambda_j D) \to (i, j)$ for $\Lambda_i, \Lambda_j \in \mathbb{Z}$. Each grid point $\pi_{(i, j)} \in \Pi$ on this square lattice is assigned a discrete variable  $s_{(i, j)} \in \{0, 1\}$ that corresponds to the spin of the grid point. The system is therefore composed of $N \equiv L^2$ spins. We arbitrarily define $s_{(i, j)} = 1$ to represent 'spin up' and $s_{(i,j)} = -1$ to represent 'spin down'.
 
-For a given grid point $\pi_{(i, j)}$, the convention of nearest neighbours is defined as representing the grid points directly adjacent to the grid point, both vertically and horizontally. Using this convention, the energy of a given spin on the grid is defined by
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.15\linewidth]{images/nearestneighbour/4x/nearestneighbour@4x.png}
+  \caption{Each dot represents a grid point on the square lattice $\Pi$. The central black grid point represents the grid point $\pi_{(i, j)}$. The blue grid points represent the nearest neighbours of $\pi_{(i, j)}$. The white grid points represent points that are not considered nearest neighbours.}
+  \label{fig:nearestneighbours}
+\end{figure}
+
+For a given grid point $\pi_{(i, j)}$, the convention of nearest neighbours is defined as representing the grid points directly adjacent to the grid point, both vertically and horizontally, as shown in Figure \ref{fig:nearestneighbours}. Using this convention, the energy of a given spin on the grid is defined by
 \begin{equation}
 E_{(i, j)} = -h_{(i, j)} s_{(i, j)}
 \end{equation}
@@ -61,7 +68,7 @@ where
 \begin{equation}
 h_{(i, j)} = \sum_{(\alpha, \beta) \; \textrm{\small{n.n. of}} \; (i, j)} \left[ J  s_{(\alpha, \beta)} \right]
 \end{equation}
-Here "n.n" represents a sum over the nearest neighbours and $J$ is a positive real number that indicates the strength of the interactions between spins. Qualitatively this set of equations defines the energy of a given spin as the sum of the interaction energies between the spin and it's nearest neighbours, where the interaction energy between two nearest neighbour spins is defined to be $-J$ if the two spins are aligned and $-J$ if the two spins are antiparallel.
+Here "n.n" represents a sum over the nearest neighbours and $J$ is a positive real number with dimensions of energy that indicates the strength of the interactions between spins. Qualitatively this set of equations defines the energy of a given spin as the sum of the interaction energies between the spin and it's nearest neighbours, where the interaction energy between two nearest neighbour spins is defined to be $-J$ if the two spins are aligned and $+J$ if the two spins are antiparallel, as shown in Figure \ref{fig:spinalignment}.
 
 From this definition of the energy for a single spin in the system, the total energy for the system is defined as
 \begin{equation}
@@ -73,6 +80,13 @@ Furthermore, the magnetisation (per spin) of the system is defined as
 \begin{equation}
 \mathcal{M} = \frac{1}{N} \sum_{i, j} s_{(i, j)}
 \end{equation}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.2\linewidth]{images/spins/4x/spins@4x.png}
+  \caption{Two nearest neighbour spins on the grid have an interaction energy of $-J$ if they are aligned and $+J$ if they are not aligned.}
+  \label{fig:spinalignment}
+\end{figure}
 
 As the number of spins in the system is fixed, a canonical thermodynamic ensemble is used. If we let a microstate $\mathcal{S}$ be defined by the instantaneous configuration of all the spins in the system, then the probability of finding the system in a microstate $S$ in thermal equilibrium at temperature $T$ is given by statistical mechanics as
 \begin{equation}
@@ -88,6 +102,13 @@ In this paper, a Metropolis Monte Carlo method is used to investigate the proper
 
 \section{Method}
 
+\subsection{Calculating Equilibrium Averages}
+
+Instead of calculating averages using an ensemble average as is conventional for statistical mechanical systems, it is in most cases also possible to calculate an average $\langle \Gamma \rangle$ for a quantity of interest $\Gamma$ by taking a time average of that value. For the case of a simulated Ising system, this means that average values can be determined by running a single simulation for a period of time as opposed to running many distinct simulation of that one system. In this way, the average value $\langle \Gamma \rangle$ is determined by taking $n$ samples of $\Gamma$ over a period of time $\{ \Gamma_i \}_{i=1}^{n}$. The average value is then calculated by
+\begin{equation}
+\langle \Gamma \rangle = \frac{1}{n}\sum_{i=1}^{n} \Gamma_i
+\end{equation}
+
 \section{Results}
 
 \subsection{Convergence to Equilibrium}
@@ -101,7 +122,7 @@ An Ising model simulation was prepared with all spins initially down. For differ
   \label{fig:magnetisationconvergence}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[b]
   \centering
   \includegraphics[width=0.9\linewidth]{images/section1/energyfinal.png}
   \caption{Evolution of dimensionless system energy as a function of the number of Monte Carlo sweeps completed for a 2D Ising model simulation with all spins initially down. The simulation was ran for a set of systems with different thermodynamic temperatures, as defined by the parameter $\beta$. Each data point represents the ensemble average over $n = 10,000$ independent sub-systems, each initialised with different pesudo-random number generator seeds. Error bars represent the standard deviation in the values for $E/J$ across the ensemble of systems.}
@@ -109,6 +130,18 @@ An Ising model simulation was prepared with all spins initially down. For differ
 \end{figure}
 
 \subsection{Measuring Equilibrium Averages}
+
+ Figure \ref{fig:equilibriumaverages} shows averages of quantities of interest as a function of the parameter $\beta$ for an Ising system in thermal equilibrium. Figure \ref{fig:equilibriumaverages} (a) shows the average magnetisation per spin as a function of $\beta$. Figure \ref{fig:equilibriumaverages} (b) shows the average dimensionless energy per spin as a function of $\beta$. Figure \ref{fig:equilibriumaverages} (c) shows the average of the absolute value of the magnetisation per spin as a function of $\beta$. For each of these graphs, the average value of interest is sampled over $\beta \in [0.25, 1]$ in discrete steps of $\Delta \beta = 0.001$.
+
+\begin{figure}[t]
+    \centering
+    \subfloat[Average magnetisation per spin]{{\includegraphics[width=8.11cm]{images/section2/magnetisation.png} }}\quad
+     \subfloat[Average dimensionless energy per spin]{{\includegraphics[width=8.11cm]{images/section2/energy.png} }}\
+ 
+    \caption{Averages of quantities of interest as a function of $\beta$ for an Ising system in thermal equilibrium. (a) shows average magnetisation per spin $\langle\mathcal{M}\rangle$ vs $\beta$. (b) shows average dimensionless energy per spin $\langle\frac{E}{NJ}\rangle$ vs $\beta$. (c) shows average absolute magnetisation per spin $\langle|\mathcal{M}|\rangle$ vs $\beta$.}
+    \label{fig:equilibriumaverages}
+\end{figure}
+
 
 \section{Discussion}
 \subsection{Determining the Fractal Dimension of DLA Aggregates where $p_{stick} = 1$}

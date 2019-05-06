@@ -3,12 +3,12 @@ close all;
 clc;
 
 system = 0;
-betaLowerLimit = 25;
-betaUpperLimit = 25;
+betaLowerLimit = 40;
+betaUpperLimit = 40;
 betaStep = 10;
 
-n0s = 1:1:200;
-n = 200;
+n0s = 1:100:10000;
+n = 5000;
 m = 10;
 
 figure;
@@ -33,7 +33,7 @@ for beta = betaLowerLimit:betaStep:betaUpperLimit
         AverageEnergies = [AverageEnergies mean(energies)]
     end
     
-    plot(n0s, AverageMagnetisations, 'x', 'DisplayName', sprintf('$\\beta = %0.2f$', beta/100))
+    plot(n0s, AverageMagnetisations, 'x-', 'DisplayName', sprintf('$\\beta = %0.2f$', beta/100))
 end
 
 hold off;

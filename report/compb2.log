@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  6 MAY 2019 01:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  6 MAY 2019 02:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -705,7 +705,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 49.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/nearestneighbour/4x/nearestneighbour@4x.png, id=48, 174.6525pt x 175.40
+<images/nearestneighbour/4x/nearestneighbour@4x.png, id=52, 174.6525pt x 175.40
 532pt>
 File: images/nearestneighbour/4x/nearestneighbour@4x.png Graphic file (type png
 )
@@ -717,14 +717,14 @@ d on input line 58.
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/nearestneighbour/4x/nearestneighbour@4x.png (PNG copy)>]
-<images/spins/4x/spins@4x.png, id=69, 220.825pt x 111.66719pt>
+<images/spins/4x/spins@4x.png, id=73, 220.825pt x 111.66719pt>
 File: images/spins/4x/spins@4x.png Graphic file (type png)
 
 <use images/spins/4x/spins@4x.png>
 Package pdftex.def Info: images/spins/4x/spins@4x.png used on input line 86.
 (pdftex.def)             Requested size: 95.99854pt x 48.54414pt.
  [2 <./images/spins/4x/spins@4x.png (PNG copy)>]
-<images/section1/magnetisationfinal.png, id=87, 2134.97626pt x 1273.75874pt>
+<images/section1/magnetisationfinal.png, id=91, 2134.97626pt x 1273.75874pt>
 File: images/section1/magnetisationfinal.png Graphic file (type png)
 
 <use images/section1/magnetisationfinal.png>
@@ -732,7 +732,7 @@ Package pdftex.def Info: images/section1/magnetisationfinal.png used on input l
 ine 120.
 (pdftex.def)             Requested size: 431.99707pt x 257.72093pt.
 
-<images/section1/energyfinal.png, id=89, 2153.04375pt x 1268.74pt>
+<images/section1/energyfinal.png, id=93, 2153.04375pt x 1268.74pt>
 File: images/section1/energyfinal.png Graphic file (type png)
 
 <use images/section1/energyfinal.png>
@@ -740,7 +740,7 @@ Package pdftex.def Info: images/section1/energyfinal.png used on input line 127
 .
 (pdftex.def)             Requested size: 431.99707pt x 254.5566pt.
 
-<images/section2/magnetisation.png, id=94, 1124.2pt x 843.15pt>
+<images/section2/magnetisation.png, id=98, 1124.2pt x 843.15pt>
 File: images/section2/magnetisation.png Graphic file (type png)
 
 <use images/section2/magnetisation.png>
@@ -748,50 +748,80 @@ Package pdftex.def Info: images/section2/magnetisation.png used on input line 1
 38.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
-<images/section2/energy.png, id=95, 1124.2pt x 843.15pt>
+<images/section2/energy.png, id=99, 1124.2pt x 843.15pt>
 File: images/section2/energy.png Graphic file (type png)
 
 <use images/section2/energy.png>
 Package pdftex.def Info: images/section2/energy.png used on input line 139.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
+<images/meanfield/magnetisation.png, id=100, 1124.2pt x 843.15pt>
+File: images/meanfield/magnetisation.png Graphic file (type png)
+
+<use images/meanfield/magnetisation.png>
+Package pdftex.def Info: images/meanfield/magnetisation.png used on input line 
+149.
+(pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
+
+<images/meanfield/energypersite.png, id=101, 1124.2pt x 843.15pt>
+File: images/meanfield/energypersite.png Graphic file (type png)
+
+<use images/meanfield/energypersite.png>
+Package pdftex.def Info: images/meanfield/energypersite.png used on input line 
+150.
+(pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
+
+<images/meanfield/heatcapacity.png, id=102, 1124.2pt x 843.15pt>
+File: images/meanfield/heatcapacity.png Graphic file (type png)
+
+<use images/meanfield/heatcapacity.png>
+Package pdftex.def Info: images/meanfield/heatcapacity.png used on input line 1
+51.
+(pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
+
+<images/meanfield/chi.png, id=103, 1124.2pt x 843.15pt>
+File: images/meanfield/chi.png Graphic file (type png)
+
+<use images/meanfield/chi.png>
+Package pdftex.def Info: images/meanfield/chi.png used on input line 152.
+(pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 147.
+(hyperref)                removing `math shift' on input line 158.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 147.
+(hyperref)                removing `subscript' on input line 158.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 147.
+(hyperref)                removing `math shift' on input line 158.
 
 No file compb2.bbl.
 [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
  [4 <./images/section1/magnetisationfinal.png> <./images/section1/energyfinal.p
-ng>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./images/section2/magnetisation.png (PNG copy)> <./images/section2/energy.
-png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
+ng>] [5 <./images/section2/magnetisation.png (PNG copy)> <./images/section2/ene
+rgy.png (PNG copy)> <./images/meanfield/magnetisation.png (PNG copy)> <./images
+/meanfield/energypersite.png (PNG copy)> <./images/meanfield/heatcapacity.png (
+PNG copy)> <./images/meanfield/chi.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
  (./compb2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
 Package rerunfilecheck Info: File `compb2.out' has not changed.
-(rerunfilecheck)             Checksum: C8A43D136C4233BBD0C2E54BFCE26DBB;674.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
+(rerunfilecheck)             Checksum: 9420C4F76BB94256426C70B223920989;741.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
  ) 
 Here is how much of TeX's memory you used:
- 17533 strings out of 493014
- 328378 string characters out of 6133350
- 399884 words of memory out of 5000000
- 20742 multiletter control sequences out of 15000+600000
+ 17560 strings out of 493014
+ 329132 string characters out of 6133350
+ 400919 words of memory out of 5000000
+ 20760 multiletter control sequences out of 15000+600000
  11829 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,919b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,96p,919b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -807,10 +837,10 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on compb2.pdf (5 pages, 414656 bytes).
+Output written on compb2.pdf (5 pages, 526790 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

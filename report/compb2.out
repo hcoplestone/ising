@@ -1,4 +1,4 @@
-\BOOKMARK [1][-]{section.1}{Introduction and Computational Method}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction and Background Theory}{}% 1
 \BOOKMARK [1][-]{section.2}{Method}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Calculating Equilibrium Averages}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Calculating Derived Quantities}{section.2}% 4
@@ -10,7 +10,7 @@
 \BOOKMARK [1][-]{section.4}{Discussion}{}% 10
 \BOOKMARK [2][-]{subsection.4.1}{Convergence to Equilibrium}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.2}{Equilibrium Averages}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.3}{Comparison with Mean-Field Theory}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{Comparison between Monte Carlo Simulation and Mean-Field Theory}{section.4}% 13
 \BOOKMARK [2][-]{subsection.4.4}{Derivative Quantities}{section.4}% 14
 \BOOKMARK [2][-]{subsection.4.5}{Suggestions for Improvement}{section.4}% 15
 \BOOKMARK [1][-]{section.5}{Conclusion}{}% 16

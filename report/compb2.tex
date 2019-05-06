@@ -15,7 +15,7 @@
 
 \usepackage[font={small}]{caption}
 
-%\usepackage[margin=2cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 
 \pagestyle{fancy}
 \lhead{Comp B Coursework 2}
@@ -29,7 +29,7 @@ Although the coursework was initially presented as a C++ project, I took the lib
 %Makes TODO notes format properly in margin
 \setlength{\marginparwidth}{1.5cm}
 
-\title[]{Comparison of Curie-Weiss Theory and Computation Metropolis Monte-Carlo Simulations for Modelling Phase Transitions in Ferromagnets using a Two-Dimensional Ising Model}
+\title[]{Comparison of Curie-Weiss Theory and Metropolis Monte Carlo Simulations for Modelling Phase Transitions in Ferromagnets using a Two-Dimensional Ising Model}
 
 \author{Candidate Number: 21594}
 
@@ -51,7 +51,7 @@ TODO
 % Comment out if separate title page not required
 %\maketitle
 
-\section{Introduction and Computational Method}
+\section{Introduction and Background Theory}
 Ferromagnetism is the property of a material to exhibit speontaneous magnetisation in the absence of an external magnetic field. The Ising Model is a mathematical model that uses the results of thermodynamics and statistical mechanics to describe how magnetic structure in some metals leads to ferromagnetism \cite{handout}. In the Ising Model presented in this paper, a magnetic material is modelled by a regular $L$ x $L$ dimensional square lattice $\Pi$. A given grid point on this lattice $\pi_{(i,j)} \in \Pi$ is indexed by cartesian coordinates $(i, j)$ where $i, j \in [0, L]$. These coordinates are not strictly unique as periodic boundary conditions are applied so that a closed system is modelled. This is to say that the grid follows the mappings $(i + \Lambda_i D, j + \Lambda_j D) \to (i, j)$ for $\Lambda_i, \Lambda_j \in \mathbb{Z}$. Each grid point $\pi_{(i, j)}$ on this square lattice is assigned a discrete variable  $s_{(i, j)} \in \{0, 1\}$ that corresponds to the spin of the grid point. The system is therefore composed of $N \equiv L^2$ spins. We arbitrarily define $s_{(i, j)} = 1$ to represent 'spin up' and $s_{(i,j)} = -1$ to represent 'spin down'.
 \begin{figure}[b]
   \centering
@@ -82,7 +82,7 @@ Furthermore, the magnetisation (per spin) of the system is defined as
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.13\linewidth]{images/spins/4x/spins@4x.png}
+  \includegraphics[width=0.14\linewidth]{images/spins/4x/spins@4x.png}
   \caption{Two nearest neighbour spins on the grid have an interaction energy of $-J$ if they are aligned and $+J$ if they are not aligned.}
   \label{fig:spinalignment}
 \end{figure}
@@ -186,7 +186,7 @@ Figure \ref{fig:derivedproperties} shows quantities derived from the data shown 
     \subfloat[Heat capacity]{{\includegraphics[width=7cm]{images/properties/varE.png} }}\quad
      \subfloat[Magnetic susceptibility]{{\includegraphics[width=7cm]{images/properties/varM.png} }}\
  
-    \caption{Computational results for dimensionless quantities that are proportional to (a) heat capacity and (b) magnetic susceptibility. Calculated from the data given in Figure \ref{fig:equilibriumaverages}.}
+    \caption{Computational Monte Carlo results for dimensionless quantities that are proportional to (a) heat capacity and (b) magnetic susceptibility. Calculated from the data given in Figure \ref{fig:equilibriumaverages}.}
     \label{fig:derivedproperties}
 \end{figure}
 
@@ -197,8 +197,8 @@ For cases where the system evolves into a state with $\mathcal{M} = 0$, which is
 \subsection{Equilibrium Averages}
 Figure \ref{fig:equilibriumaverages} (a) shows an increase in system magnetisation from an initial value of $-1$ to approximately $-0.8$ as $T_0$ is increased from $1$ to approximately 2.3. This corresponds to the system transitioning from an initial perfectly ferromagnetic order with all spins down to more energetic states with ferrimagnetic order where some spins are up but the majority are still down, resulting in a net negative magnetisation. The simulated Ising model then almost-perfectly captures a phase transition at a critical dimensionless temperature of $T_{0,c} \approx 2.3$, at which point the system almost instantaneously assumes paramagnetic order for which $\mathcal{M} = 0$ in the absence of an external magnetic field. For all temperatures greater than this critical temperature, no change in magnetisation is exhibited. Note somewhat weird behaviour is exhibited during the phase transition where the magnetisation appears to diverge and becomes greater than 0. This could be physical or could simply be that the system is so chaotic during this transition that Monte Carlo averaging breaks down and fails to capture the true behaviour of the system. Additionally, although a discontinuity exists in the magnetisation during the phase transition, the system's energy increases continuously during the transition, as physically expected!
 
-\subsection{Comparison with Mean-Field Theory}
-
+\subsection{Comparison between Monte Carlo Simulation and Mean-Field Theory}
+Comparison of Figures \ref{fig:equilibriumaverages} (c) and \ref{fig:meanFieldResults} (a) shows that mean field theory is in agreement with the Monte Carlo simulations for the behaviour of the system magnetisation $\mathcal{M}$ up to the critical temperature $T_c$ at which the phase transition occurs. Furthermore,
 
 \subsection{Derivative Quantities}
  

@@ -13,16 +13,16 @@ n0 = 2000
 n = 50
 m = (200000 - n0)/n
 
-Betas = [];
+Ts = [];
 HeatCapacities = [];
 Chis = [];
 
-for beta = betas
-    fname = ['./section2final2/beta-', num2str(beta) ,'-system', num2str(system) ,'.csv'];
+for file = dir('awesome/*.csv')'    
+    fname = ['./awesome/', file.name];
     data = csvread(fname, 1);
 
     Sweep = data(:,1);
-    Beta = data(:,2);
+    Temp = data(:,2);
     SubSystemID = data(:,3);
     Magnetisation = data(:,4);
     DimensionlessEnergy = data(:,5);
@@ -30,21 +30,20 @@ for beta = betas
     magnetisations = Magnetisation(n0:n:(n0+n*m));
     energies = DimensionlessEnergy(n0:n:(n0+n*m));
     
-    Betas = [Betas Beta(1)]
-    
-    T = 1/Beta(1)
-    
+    T = Temp(1)
+    Ts = [Ts T]
+        
     HeatCapacities = [HeatCapacities var(energies)/(T^2)];
     Chis = [Chis var(magnetisations)/T];
 end
 
 figure;
-plot(1./Betas, HeatCapacities, 'x-')
+plot(Ts, HeatCapacities, '.')
 xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
 ylabel('Var($E$) / $T_0^2$', 'Interpreter', 'latex', 'FontSize', 16);
 
 figure;
-plot(1./Betas, Chis, 'x-')
+plot(Ts, Chis, '.')
 xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
 ylabel('Var($M$) / $T$', 'Interpreter', 'latex', 'FontSize', 16);
 

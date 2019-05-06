@@ -104,9 +104,13 @@ In this paper, a Metropolis Monte Carlo method is used to investigate the proper
 
 \subsection{Calculating Equilibrium Averages}
 
-Instead of calculating averages using an ensemble average as is conventional for statistical mechanical systems, it is in most cases also possible to calculate an average $\langle \Gamma \rangle$ for a quantity of interest $\Gamma$ by taking a time average of that value. For the case of a simulated Ising system, this means that average values can be determined by running a single simulation for a period of time as opposed to running many distinct simulation of that one system. In this way, the average value $\langle \Gamma \rangle$ is determined by taking $n$ samples of $\Gamma$ over a period of time $\{ \Gamma_i \}_{i=1}^{n}$. The average value is then calculated by
+Instead of calculating averages using an ensemble average as is conventional for statistical mechanical systems, it is in most cases also possible to calculate an average $\langle \Gamma \rangle$ for a quantity of interest $\Gamma$ by taking a time average of that value. This is the principle of the ergodic hypothesis of thermodynamics \cite{statmech}.  For the case of a simulated Ising system, this means that average values can be determined by running a single simulation for a period of time as opposed to running many distinct simulations of that one system. In this way, the average value $\langle \Gamma \rangle$ is determined by taking $n$ samples of $\Gamma$ over a period of time $\{ \Gamma_i \}_{i=1}^{n}$. The average value is then calculated by
 \begin{equation}
 \langle \Gamma \rangle = \frac{1}{n}\sum_{i=1}^{n} \Gamma_i
+\end{equation}
+For independent measurements, then the uncertainty in this average is estimated well by the standard error
+\begin{equation}
+\bar{\sigma}_{\Gamma} = \frac{1}{\sqrt{n-1}} \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( \Gamma_i - \langle \Gamma \rangle \right)^2 }
 \end{equation}
 
 \section{Results}
@@ -131,7 +135,7 @@ An Ising model simulation was prepared with all spins initially down. For differ
 
 \subsection{Measuring Equilibrium Averages}
 
- Figure \ref{fig:equilibriumaverages} shows averages of quantities of interest as a function of the parameter $\beta$ for an Ising system in thermal equilibrium. Figure \ref{fig:equilibriumaverages} (a) shows the average magnetisation per spin as a function of $\beta$. Figure \ref{fig:equilibriumaverages} (b) shows the average dimensionless energy per spin as a function of $\beta$. Figure \ref{fig:equilibriumaverages} (c) shows the average of the absolute value of the magnetisation per spin as a function of $\beta$. For each of these graphs, the average value of interest is sampled over $\beta \in [0.25, 1]$ in discrete steps of $\Delta \beta = 0.001$.
+Figure \ref{fig:equilibriumaverages} shows averages of quantities of interest as a function of the parameter $\beta$ for an Ising system in thermal equilibrium. Figure \ref{fig:equilibriumaverages} (a) shows the average magnetisation per spin as a function of $\beta$. Figure \ref{fig:equilibriumaverages} (b) shows the average dimensionless energy per spin as a function of $\beta$. Figure \ref{fig:equilibriumaverages} (c) shows the average of the absolute value of the magnetisation per spin as a function of $\beta$. For each of these graphs, the average value of interest is sampled over $\beta \in [0.25, 1]$ in discrete steps of $\Delta \beta = 0.001$.
 
 \begin{figure}[t]
     \centering
@@ -144,11 +148,13 @@ An Ising model simulation was prepared with all spins initially down. For differ
 
 \subsection{Mean Field Theory}
 
+Figure \ref{fig:meanFieldResults} shows the mean field theory results for quantities of interest in the Ising model. Figure \ref{fig:meanFieldResults} (a) shows mean field theory results for the magnetisation per spin. Figure \ref{fig:meanFieldResults} (b) shows results for the dimensionless energy per spin. Figure \ref{fig:meanFieldResults} (c) shows results for the dimensionless heat capacity. Figure \ref{fig:meanFieldResults} (d) shows results for the magnetic susceptibility.
+
 \begin{figure}[t]
     \centering
-    \subfloat[Magnetisation]{{\includegraphics[width=8cm]{images/meanfield/magnetisation.png} }}\quad
-     \subfloat[Energy per spin]{{\includegraphics[width=8cm]{images/meanfield/energypersite.png} }}\\
-     \subfloat[Heat capacity]{{\includegraphics[width=8cm]{images/meanfield/heatcapacity.png} }}\quad
+    \subfloat[Magnetisation per spin]{{\includegraphics[width=8cm]{images/meanfield/magnetisation.png} }}\quad
+     \subfloat[Dimensionless energy per spin]{{\includegraphics[width=8cm]{images/meanfield/energypersite.png} }}\\
+     \subfloat[Dimensionless heat capacity]{{\includegraphics[width=8cm]{images/meanfield/heatcapacity.png} }}\quad
         \subfloat[Magnetic Susceptibility]{{\includegraphics[width=8cm]{images/meanfield/chi.png} }}\quad
     \caption{TODO}
     \label{fig:meanFieldResults}
@@ -161,7 +167,7 @@ An Ising model simulation was prepared with all spins initially down. For differ
 \section{Conclusion}
 
 \section*{References}
-\bibliography{refs}
+\bibliography{references}
 \bibliographystyle{plain}
 
 \end{document}

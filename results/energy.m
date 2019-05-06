@@ -3,44 +3,57 @@ close all;
 clc;
 
 system = 0;
-betaLowerLimit = 25;
-betaUpperLimit = 100;
-betaStep = 1;
-
-betas = betaLowerLimit:betaStep:betaUpperLimit;
 
 n0 = 2000
-n = 50
+n = 200
 m = (200000 - n0)/n
 
 AverageMagnetisations = [];
+AverageMagnetisationsErrors = [];
 AverageEnergies = [];
+AverageEnergiesErrors = [];
 
-figure;
-hold on;
-for beta = betas
-    fname = ['./section2final2/beta-', num2str(beta) ,'-system', num2str(system) ,'.csv'];
+Ts = [];
+
+for file = dir('awesome/*.csv')'
+    fname = ['./awesome/', file.name];
     data = csvread(fname, 1);
 
     Sweep = data(:,1);
-    Beta = data(:,2);
+    Temp = data(:,2);
     SubSystemID = data(:,3);
     Magnetisation = data(:,4);
     DimensionlessEnergy = data(:,5);
+    
+    Ts = [Ts Temp(1)]
         
     magnetisations = Magnetisation(n0:n:(n0+n*m));
     energies = DimensionlessEnergy(n0:n:(n0+n*m));
+    energies = energies ./ (40*40);
+    
     AverageMagnetisations = [AverageMagnetisations mean(magnetisations)];
     AverageEnergies = [AverageEnergies mean(energies)];
+    
+    ErrorMagnetisation = std(magnetisations) / sqrt(length(magnetisations) - 1);
+    ErrorEnergy = std(energies) / sqrt(length(energies) - 1);
+
+    AverageMagnetisationsErrors = [AverageMagnetisationsErrors ErrorMagnetisation];
+    AverageEnergiesErrors = [AverageEnergiesErrors ErrorEnergy];
 end
 
-AverageEnergiesPerSpin = AverageEnergies ./ (40*40)
 
-plot(betas/100, AverageEnergiesPerSpin, 'x-')
-
-hold off;
-xlabel('$\beta$', 'Interpreter', 'latex', 'FontSize', 16);
+figure;
+% plot(Ts, AverageEnergies, '.-')
+errorbar(Ts, AverageEnergies, AverageEnergiesErrors, '.')
+xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
 ylabel('$<\frac{E}{NJ}>$', 'Interpreter', 'latex', 'FontSize', 16);
+
+figure;
+% plot(Ts, AverageMagnetisations, '.-')
+errorbar(Ts, AverageMagnetisations, AverageMagnetisationsErrors, '.')
+xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
+ylabel('$<\mathcal{M}>$', 'Interpreter', 'latex', 'FontSize', 16);
+
 % ylim([-1, 0.2])
 
 % legend_handle = legend('-DynamicLegend');

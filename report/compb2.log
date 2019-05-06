@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  6 MAY 2019 02:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  6 MAY 2019 04:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -724,104 +724,105 @@ File: images/spins/4x/spins@4x.png Graphic file (type png)
 Package pdftex.def Info: images/spins/4x/spins@4x.png used on input line 86.
 (pdftex.def)             Requested size: 95.99854pt x 48.54414pt.
  [2 <./images/spins/4x/spins@4x.png (PNG copy)>]
-<images/section1/magnetisationfinal.png, id=91, 2134.97626pt x 1273.75874pt>
+<images/section1/magnetisationfinal.png, id=92, 2134.97626pt x 1273.75874pt>
 File: images/section1/magnetisationfinal.png Graphic file (type png)
 
 <use images/section1/magnetisationfinal.png>
 Package pdftex.def Info: images/section1/magnetisationfinal.png used on input l
-ine 120.
+ine 124.
 (pdftex.def)             Requested size: 431.99707pt x 257.72093pt.
 
-<images/section1/energyfinal.png, id=93, 2153.04375pt x 1268.74pt>
+<images/section1/energyfinal.png, id=94, 2153.04375pt x 1268.74pt>
 File: images/section1/energyfinal.png Graphic file (type png)
 
 <use images/section1/energyfinal.png>
-Package pdftex.def Info: images/section1/energyfinal.png used on input line 127
+Package pdftex.def Info: images/section1/energyfinal.png used on input line 131
 .
 (pdftex.def)             Requested size: 431.99707pt x 254.5566pt.
 
-<images/section2/magnetisation.png, id=98, 1124.2pt x 843.15pt>
+<images/section2/magnetisation.png, id=99, 1124.2pt x 843.15pt>
 File: images/section2/magnetisation.png Graphic file (type png)
 
 <use images/section2/magnetisation.png>
 Package pdftex.def Info: images/section2/magnetisation.png used on input line 1
-38.
+42.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
-<images/section2/energy.png, id=99, 1124.2pt x 843.15pt>
+<images/section2/energy.png, id=100, 1124.2pt x 843.15pt>
 File: images/section2/energy.png Graphic file (type png)
 
 <use images/section2/energy.png>
-Package pdftex.def Info: images/section2/energy.png used on input line 139.
+Package pdftex.def Info: images/section2/energy.png used on input line 143.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
-<images/meanfield/magnetisation.png, id=100, 1124.2pt x 843.15pt>
+<images/meanfield/magnetisation.png, id=106, 1124.2pt x 843.15pt>
 File: images/meanfield/magnetisation.png Graphic file (type png)
 
 <use images/meanfield/magnetisation.png>
 Package pdftex.def Info: images/meanfield/magnetisation.png used on input line 
-149.
+155.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
-<images/meanfield/energypersite.png, id=101, 1124.2pt x 843.15pt>
+<images/meanfield/energypersite.png, id=107, 1124.2pt x 843.15pt>
 File: images/meanfield/energypersite.png Graphic file (type png)
 
 <use images/meanfield/energypersite.png>
 Package pdftex.def Info: images/meanfield/energypersite.png used on input line 
-150.
+156.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
-<images/meanfield/heatcapacity.png, id=102, 1124.2pt x 843.15pt>
+<images/meanfield/heatcapacity.png, id=108, 1124.2pt x 843.15pt>
 File: images/meanfield/heatcapacity.png Graphic file (type png)
 
 <use images/meanfield/heatcapacity.png>
 Package pdftex.def Info: images/meanfield/heatcapacity.png used on input line 1
-51.
+57.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
-<images/meanfield/chi.png, id=103, 1124.2pt x 843.15pt>
+<images/meanfield/chi.png, id=109, 1124.2pt x 843.15pt>
 File: images/meanfield/chi.png Graphic file (type png)
 
 <use images/meanfield/chi.png>
-Package pdftex.def Info: images/meanfield/chi.png used on input line 152.
+Package pdftex.def Info: images/meanfield/chi.png used on input line 158.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `math shift' on input line 164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 158.
+(hyperref)                removing `subscript' on input line 164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `math shift' on input line 164.
 
-No file compb2.bbl.
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
- [4 <./images/section1/magnetisationfinal.png> <./images/section1/energyfinal.p
-ng>] [5 <./images/section2/magnetisation.png (PNG copy)> <./images/section2/ene
-rgy.png (PNG copy)> <./images/meanfield/magnetisation.png (PNG copy)> <./images
-/meanfield/energypersite.png (PNG copy)> <./images/meanfield/heatcapacity.png (
-PNG copy)> <./images/meanfield/chi.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+(./compb2.bbl [3]) [4 <./images/section1/magnetisationfinal.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 173.
+ [5 <./images/section1/energyfinal.png> <./images/section2/magnetisation.png (P
+NG copy)> <./images/section2/energy.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./images/meanfield/magnetisation.png (PNG copy)> <./images/meanfield/energ
+ypersite.png (PNG copy)> <./images/meanfield/heatcapacity.png (PNG copy)> <./im
+ages/meanfield/chi.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 173.
  (./compb2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 173.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 173.
 Package rerunfilecheck Info: File `compb2.out' has not changed.
 (rerunfilecheck)             Checksum: 9420C4F76BB94256426C70B223920989;741.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 173.
  ) 
 Here is how much of TeX's memory you used:
- 17560 strings out of 493014
- 329132 string characters out of 6133350
- 400919 words of memory out of 5000000
- 20760 multiletter control sequences out of 15000+600000
+ 17567 strings out of 493014
+ 329205 string characters out of 6133350
+ 403949 words of memory out of 5000000
+ 20762 multiletter control sequences out of 15000+600000
  11829 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,919b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,96p,919b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -837,10 +838,10 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on compb2.pdf (5 pages, 526790 bytes).
+Output written on compb2.pdf (6 pages, 534987 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

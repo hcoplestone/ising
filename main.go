@@ -48,7 +48,7 @@ func runIsingSystem(initialBeta float64, numberOfSweeps int, seed int64, wg *syn
 	initialTemperature := 1 / initialBeta
 	system := NewIsingSystem(40, initialTemperature, seed, false)
 
-	filenameComponents := []string{"results/section2final3/beta-", strconv.Itoa(int(initialBeta * 1000)), "-system", strconv.Itoa(subSystemID), ".csv"}
+	filenameComponents := []string{"results/awesome/beta-", strconv.Itoa(int(initialBeta * 1000)), "-system", strconv.Itoa(subSystemID), ".csv"}
 	csvFilename := strings.Join(filenameComponents, "")
 
 	f, err := os.OpenFile(csvFilename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -78,10 +78,14 @@ func main() {
 	ensembleCount := 1
 
 	// numberOfSweeps := 1000000
-	numberOfSweeps := 200000
-	betaStep := 0.001
-	betaLowerLimit := 0.25
-	betaUpperLimit := 1.0 + betaStep
+	numberOfSweeps := 100000
+	// betaStep := 0.001
+	// betaLowerLimit := 0.25
+	// betaUpperLimit := 1.0 + betaStep
+
+	tempStep := 0.01
+	tempLowerLimit := 1.0
+	tempUpperLimit := 4.0 + tempStep
 
 	numberOfCores := runtime.NumCPU()
 	fmt.Printf("Using " + strconv.Itoa(numberOfCores) + " cores...\n")
@@ -90,8 +94,9 @@ func main() {
 	var wg sync.WaitGroup
 
 	for ensembleSubSystem := 0; ensembleSubSystem < ensembleCount; ensembleSubSystem++ {
-		for beta := betaLowerLimit; beta <= betaUpperLimit; beta = beta + betaStep {
+		for temp := tempLowerLimit; temp <= tempUpperLimit; temp = temp + tempStep {
 			wg.Add(1)
+			beta := 1.0 / temp
 			fmt.Printf("Starting system - sub system %d - beta = %f\n", ensembleSubSystem, beta)
 			go runIsingSystem(beta, numberOfSweeps, int64(ensembleSubSystem), &wg, ensembleSubSystem)
 		}

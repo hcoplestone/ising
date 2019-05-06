@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: compb2.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--entry type for "autocorrelation" isn't style-file defined
+--line 11 of file references.bib
+Warning--to sort, need author, editor, or key in meanfield
+Warning--empty author and editor in meanfield
+You've used 5 entries,
+            2118 wiz_defined-function locations,
+            527 strings with 5008 characters,
+and the built_in function-call counts, 1083 in all, are:
+= -- 105
+> -- 29
+< -- 0
++ -- 14
+- -- 8
+* -- 49
+:= -- 185
+add.period$ -- 16
+call.type$ -- 5
+change.case$ -- 17
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 51
+empty$ -- 113
+format.name$ -- 8
+if$ -- 238
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 26
+num.names$ -- 8
+pop$ -- 30
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 35
+stack$ -- 0
+substring$ -- 26
+swap$ -- 5
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 14
+warning$ -- 2
+while$ -- 8
+width$ -- 6
+write$ -- 53
+(There were 3 warnings)

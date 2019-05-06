@@ -24,4 +24,10 @@ Tao Pang.
 \newblock {\em An Introduction to Quantum Monte Carlo Methods}.
 \newblock 2053-2571. Morgan and Claypool Publishers, 2016.
 
+\bibitem{autocorrelation}
+Ohio~State University.
+\newblock Notes on the ising model from 6810 computational physics. accessed
+  online on 06/05/2019.
+  \url{https://www.asc.ohio-state.edu/physics/ntg/6805/readings/ising_model.pdf}.
+
 \end{thebibliography}

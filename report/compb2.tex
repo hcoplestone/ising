@@ -128,9 +128,11 @@ t_i = n_0 + i \Delta
 It can be shown that the specific heat capacity $c$ and the magnetic susceptibility $\chi$ of an Ising system are determinable by the equations \cite{handout}
 \begin{multicols}{2}
 \begin{equation}
+\label{eq:heatcapacity}
 c = \frac{1}{N k_B T^2} \textrm{Var}(E)
 \end{equation}
 \begin{equation}
+\label{eq:mag}
 \chi = \frac{N}{k_B T} \textrm{Var}({\mathcal{M}})
 \end{equation}
 \end{multicols}where $T$ is the thermodynamic temperature of the Ising system and $\textrm{Var}(E)$ and $\textrm{Var}(\mathcal{M})$ refer to the variance of the system energy and magnetisation respectively.
@@ -201,9 +203,10 @@ Figure \ref{fig:equilibriumaverages} (a) shows an increase in system magnetisati
 Comparison of Figures \ref{fig:equilibriumaverages} (c) and \ref{fig:meanFieldResults} (a) shows that mean field theory is in agreement with the Monte Carlo simulations for the behaviour of the system magnetisation $\mathcal{M}$ up to the critical temperature $T_c$ at which the phase transition occurs. In addition, inspection of Figure \ref{fig:meanFieldResults} shows that the mean field approximation to the magnetisation is a good approximation to the analytic energy at both low temperatures and at the phase transition. In between however, mean field theory starts decreasing from 1 to 0 much earlier than the analytic solution. Comparison of Figures \ref{fig:equilibriumaverages} (b) and \ref{fig:meanFieldResults} (b) shows that mean field theory gives a very good approximation to the behaviour of the total system energy up until the critical dimensionless temperature at $T_{0,c} \approx 2.3$. Comparison of Figures \ref{fig:meanFieldResults} (c) and \ref{fig:derivedproperties} (a) shows that mean field theory agrees fairly well with Monte Carlo simulations in the region between $T = 0$ and the phase transition. However, immediately after the phase transition, mean field theory gives a heat capacity of $c \approx 0$ whereas Monte Carlo simulations give a heat capacity distribution that peaks at the phase transition and then decreases after the transition in a manner that is almost symmetric about the critical temperature.
 
 \subsection{Derivative Quantities}
+By inspection, it is immediately apparent that the heat capacity shown in Figure \ref{fig:derivedproperties} (a) as determined using equation (\ref{eq:heatcapacity}) is consistent with the definition of heat capacity as $c = \frac{\partial}{\partial T}\langle E/N \rangle$ \cite{handout} as the shape of Figure \ref{fig:derivedproperties} (a) nicely reflects the gradient of Figure \ref{fig:equilibriumaverages} (a).
  
  \subsection{Suggestions for Improvement}
- When calculating averages in 
+ In this paper, when calculating equilibrium averages, the number of Monte Carlo sweeps that were skipped $n_0$ was simply made very large so there was a negligible chance of initial transient behaviour affecting the calculated averages. A more efficient approach to this would be to calculate and use the autocorrelation function for each quantity being averaged so that the smallest number of sweeps possible is skipped, as presented in \cite{autocorrelation}.
  
 \section{Conclusion}
 

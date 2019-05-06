@@ -15,7 +15,7 @@
 \usepackage[font={small}]{caption}
 
 \pagestyle{fancy}
-\lhead{Diffusion Limited Aggregation}
+\lhead{The Ising Model}
 \rhead{Candidate Number: 21594}
 
 \begin{document}
@@ -83,7 +83,7 @@ Furthermore, the magnetisation (per spin) of the system is defined as
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.2\linewidth]{images/spins/4x/spins@4x.png}
+  \includegraphics[width=0.13\linewidth]{images/spins/4x/spins@4x.png}
   \caption{Two nearest neighbour spins on the grid have an interaction energy of $-J$ if they are aligned and $+J$ if they are not aligned.}
   \label{fig:spinalignment}
 \end{figure}
@@ -99,7 +99,7 @@ Z(T) = \sum_{S} e^{-E(S)/k_B T}
 \end{equation}
 where the summations here run over all $2^N$ possible microstates $S$ of the system.
 
-In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$. In the interest of being concise, for details on how the Metropolis Monte Carlo method works and is implemented, I refer the reader to standard literature \cite{montecarlo} as this is a common and well studied algorithm for sampling phase spaces with defined probability distributions such as given by equation (\ref{eq:probabilitydist}). In addition, we compare computational results with those given by a mean-field theory, the derivation and results of which are described in \cite{handout} and, for more detail, the chapter 'Phase Transitions and Critical Phenomena' of \cite{meanfield}.
+In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$. In the interest of being concise, for details on how the Metropolis Monte Carlo method works and is implemented, I refer the reader to standard literature \cite{montecarlo} as this is a common and well studied algorithm for sampling phase spaces with defined probability distributions such as given by equation (\ref{eq:probabilitydist}). In addition, we compare computational results with those given by a mean-field theory, the derivation and results of which are described in \cite{handout} and, in more detail, the chapter 'Phase Transitions and Critical Phenomena' of \cite{meanfield}.
 
 It is important to note that in the computational simulations used in this paper, the Ising systems are characterised by a dimensionless temperature $T_0 \equiv \frac{T k_B}{J}$. From this, we define the inverse dimensionless temperatures $\beta \equiv \frac{1}{T_0}$.
 
@@ -164,7 +164,7 @@ Figure \ref{fig:equilibriumaverages} shows averages of quantities of interest as
      \subfloat[Average dimensionless energy per spin]{{\includegraphics[width=8.11cm]{images/section2/energytime.png} }}\
           \subfloat[Average absolute magnetisation per spin]{{\includegraphics[width=8.11cm]{images/section2/absmagnetisation.png} }}\
  
-    \caption{Averages of quantities as given by equation (\ref{eq:averages}) of interest as a function of dimensionless temperature $T_0$ for an Ising system in thermal equilibrium. (a) shows average magnetisation per spin $\langle\mathcal{M}\rangle$ vs $T_0$. (b) shows average dimensionless energy per spin $\langle\frac{E}{NJ}\rangle$ vs $T_0$. (c) shows average absolute magnetisation per spin $\langle|\mathcal{M}|\rangle$ vs $T_0$. Error bars represent standard errors as given by equation (\ref{eq:standarderror}).}
+    \caption{Averages of quantities as given by equation (\ref{eq:averages}) of interest as a function of dimensionless temperature $T_0$ for an Ising system in thermal equilibrium. (a) shows average magnetisation per spin $\langle\mathcal{M}\rangle$ vs $T_0$. (b) shows average dimensionless energy per spin $\langle\frac{E}{NJ}\rangle$ vs $T_0$. (c) shows average absolute magnetisation per spin $\langle|\mathcal{M}|\rangle$ vs $T_0$. Each average is determined from 990 samples given by equation (\ref{eq:samples}) with $n_0 = 2000$ and $\Delta = 200$. Error bars represent standard errors as given by equation (\ref{eq:standarderror}).}
     \label{fig:equilibriumaverages}
 \end{figure}
 
@@ -178,7 +178,7 @@ Figure \ref{fig:meanFieldResults} shows the mean field theory results for quanti
      \subfloat[Dimensionless energy per spin]{{\includegraphics[width=8cm]{images/meanfield/energypersite.png} }}\\
      \subfloat[Dimensionless heat capacity]{{\includegraphics[width=8cm]{images/meanfield/heatcapacity.png} }}\quad
         \subfloat[Magnetic Susceptibility]{{\includegraphics[width=8cm]{images/meanfield/chi.png} }}\quad
-    \caption{TODO}
+    \caption{Mean field theory results for (a) the magnetisation per spin, (b) the dimensionless energy per spin, (c) dimensionless heat capacity and (d) magnetic susceptibility as a function of a dimensionless temperature parameter $T/T_c$.}
     \label{fig:meanFieldResults}
 \end{figure}
 
@@ -186,10 +186,10 @@ Figure \ref{fig:meanFieldResults} shows the mean field theory results for quanti
 
 \begin{figure}[t]
     \centering
-    \subfloat[]{{\includegraphics[width=8.11cm]{images/properties/varE.png} }}\quad
-     \subfloat[]{{\includegraphics[width=8.11cm]{images/properties/varM.png} }}\
+    \subfloat[Heat capacity]{{\includegraphics[width=8.11cm]{images/properties/varE.png} }}\quad
+     \subfloat[Magnetic susceptibility]{{\includegraphics[width=8.11cm]{images/properties/varM.png} }}\
  
-    \caption{}
+    \caption{Computational results for dimensionless quantities that are proportional to (a) heat capacity and (b) magnetic susceptibility. Calculated from the data given in Figure \ref{fig:equilibriumaverages}.}
     \label{fig:derivedproperties}
 \end{figure}
 

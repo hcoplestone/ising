@@ -45,7 +45,7 @@ ylabel('Var($E$) / $T_0^2$', 'Interpreter', 'latex', 'FontSize', 16);
 figure;
 plot(Ts, Chis, '.')
 xlabel('$T_0$', 'Interpreter', 'latex', 'FontSize', 16);
-ylabel('Var($M$) / $T$', 'Interpreter', 'latex', 'FontSize', 16);
+ylabel('Var($M$) / $T_0$', 'Interpreter', 'latex', 'FontSize', 16);
 
 % ylim([-1, 0.2])
 

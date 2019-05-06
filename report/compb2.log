@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  6 MAY 2019 05:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.13)  6 MAY 2019 06:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -705,7 +705,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 49.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/nearestneighbour/4x/nearestneighbour@4x.png, id=56, 174.6525pt x 175.40
+<images/nearestneighbour/4x/nearestneighbour@4x.png, id=60, 174.6525pt x 175.40
 532pt>
 File: images/nearestneighbour/4x/nearestneighbour@4x.png Graphic file (type png
 )
@@ -717,138 +717,137 @@ d on input line 58.
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/nearestneighbour/4x/nearestneighbour@4x.png (PNG copy)>]
-<images/spins/4x/spins@4x.png, id=77, 220.825pt x 111.66719pt>
+<images/spins/4x/spins@4x.png, id=81, 220.825pt x 111.66719pt>
 File: images/spins/4x/spins@4x.png Graphic file (type png)
 
 <use images/spins/4x/spins@4x.png>
 Package pdftex.def Info: images/spins/4x/spins@4x.png used on input line 86.
 (pdftex.def)             Requested size: 95.99854pt x 48.54414pt.
- [2 <./images/spins/4x/spins@4x.png (PNG copy)>]
-<images/section1/magnetisationfinal.png, id=97, 2134.97626pt x 1273.75874pt>
+ [2 <./images/spins/4x/spins@4x.png (PNG copy)>] [3]
+<images/section1/magnetisationfinal.png, id=113, 2134.97626pt x 1273.75874pt>
 File: images/section1/magnetisationfinal.png Graphic file (type png)
 
 <use images/section1/magnetisationfinal.png>
 Package pdftex.def Info: images/section1/magnetisationfinal.png used on input l
-ine 135.
+ine 146.
 (pdftex.def)             Requested size: 384.00146pt x 229.09175pt.
 
-<images/section1/energyfinal.png, id=99, 2153.04375pt x 1268.74pt>
+<images/section1/energyfinal.png, id=115, 2153.04375pt x 1268.74pt>
 File: images/section1/energyfinal.png Graphic file (type png)
 
 <use images/section1/energyfinal.png>
-Package pdftex.def Info: images/section1/energyfinal.png used on input line 142
+Package pdftex.def Info: images/section1/energyfinal.png used on input line 153
 .
 (pdftex.def)             Requested size: 384.00146pt x 226.27252pt.
 
-<images/section2/magnetisationtime.png, id=104, 1124.2pt x 843.15pt>
+<images/section2/magnetisationtime.png, id=120, 1124.2pt x 843.15pt>
 File: images/section2/magnetisationtime.png Graphic file (type png)
 
 <use images/section2/magnetisationtime.png>
 Package pdftex.def Info: images/section2/magnetisationtime.png used on input li
-ne 153.
+ne 164.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
-<images/section2/energytime.png, id=105, 1124.2pt x 843.15pt>
+<images/section2/energytime.png, id=121, 1124.2pt x 843.15pt>
 File: images/section2/energytime.png Graphic file (type png)
 
 <use images/section2/energytime.png>
-Package pdftex.def Info: images/section2/energytime.png used on input line 154.
+Package pdftex.def Info: images/section2/energytime.png used on input line 165.
 
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
-<images/section2/absmagnetisation.png, id=106, 1124.2pt x 843.15pt>
+<images/section2/absmagnetisation.png, id=122, 1124.2pt x 843.15pt>
 File: images/section2/absmagnetisation.png Graphic file (type png)
 
 <use images/section2/absmagnetisation.png>
 Package pdftex.def Info: images/section2/absmagnetisation.png used on input lin
-e 155.
+e 166.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
- [3] [4 <./images/section1/magnetisationfinal.png> <./images/section1/energyfin
-al.png>]
-<images/meanfield/magnetisation.png, id=133, 1124.2pt x 843.15pt>
+
+<images/meanfield/magnetisation.png, id=132, 1124.2pt x 843.15pt>
 File: images/meanfield/magnetisation.png Graphic file (type png)
 
 <use images/meanfield/magnetisation.png>
 Package pdftex.def Info: images/meanfield/magnetisation.png used on input line 
-167.
+178.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
-<images/meanfield/energypersite.png, id=134, 1124.2pt x 843.15pt>
+<images/meanfield/energypersite.png, id=133, 1124.2pt x 843.15pt>
 File: images/meanfield/energypersite.png Graphic file (type png)
 
 <use images/meanfield/energypersite.png>
 Package pdftex.def Info: images/meanfield/energypersite.png used on input line 
-168.
+179.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
-<images/meanfield/heatcapacity.png, id=135, 1124.2pt x 843.15pt>
+<images/meanfield/heatcapacity.png, id=134, 1124.2pt x 843.15pt>
 File: images/meanfield/heatcapacity.png Graphic file (type png)
 
 <use images/meanfield/heatcapacity.png>
 Package pdftex.def Info: images/meanfield/heatcapacity.png used on input line 1
-69.
+80.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
 
-<images/meanfield/chi.png, id=136, 1124.2pt x 843.15pt>
+<images/meanfield/chi.png, id=135, 1124.2pt x 843.15pt>
 File: images/meanfield/chi.png Graphic file (type png)
 
 <use images/meanfield/chi.png>
-Package pdftex.def Info: images/meanfield/chi.png used on input line 170.
+Package pdftex.def Info: images/meanfield/chi.png used on input line 181.
 (pdftex.def)             Requested size: 227.62204pt x 170.7112pt.
-
-<images/properties/varE.png, id=137, 1124.2pt x 843.15pt>
+ [4 <./images/section1/magnetisationfinal.png>]
+<images/properties/varE.png, id=145, 1124.2pt x 843.15pt>
 File: images/properties/varE.png Graphic file (type png)
 
 <use images/properties/varE.png>
-Package pdftex.def Info: images/properties/varE.png used on input line 179.
+Package pdftex.def Info: images/properties/varE.png used on input line 190.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
-<images/properties/varM.png, id=138, 1124.2pt x 843.15pt>
+<images/properties/varM.png, id=146, 1124.2pt x 843.15pt>
 File: images/properties/varM.png Graphic file (type png)
 
 <use images/properties/varM.png>
-Package pdftex.def Info: images/properties/varM.png used on input line 180.
+Package pdftex.def Info: images/properties/varM.png used on input line 191.
 (pdftex.def)             Requested size: 230.75186pt x 173.0527pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 187.
+(hyperref)                removing `math shift' on input line 198.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 187.
+(hyperref)                removing `subscript' on input line 198.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 187.
+(hyperref)                removing `math shift' on input line 198.
 
-(./compb2.bbl [5 <./images/section2/magnetisationtime.png (PNG copy)> <./images
-/section2/energytime.png (PNG copy)> <./images/section2/absmagnetisation.png (P
-NG copy)>] [6 <./images/meanfield/magnetisation.png (PNG copy)> <./images/meanf
-ield/energypersite.png (PNG copy)> <./images/meanfield/heatcapacity.png (PNG co
-py)> <./images/meanfield/chi.png (PNG copy)> <./images/properties/varE.png (PNG
- copy)> <./images/properties/varM.png (PNG copy)>]) [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+(./compb2.bbl) [5 <./images/section1/energyfinal.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./images/section2/magnetisationtime.png (PNG copy)> <./images/section2/ene
+rgytime.png (PNG copy)> <./images/section2/absmagnetisation.png (PNG copy)>] [7
+ <./images/meanfield/magnetisation.png (PNG copy)> <./images/meanfield/energype
+rsite.png (PNG copy)> <./images/meanfield/heatcapacity.png (PNG copy)> <./image
+s/meanfield/chi.png (PNG copy)> <./images/properties/varE.png (PNG copy)> <./im
+ages/properties/varM.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
  (./compb2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `compb2.out' has not changed.
-(rerunfilecheck)             Checksum: E59F2F7C75BF8508B1FF49A3396C4B96;842.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+(rerunfilecheck)             Checksum: 234A2E142F541A7CD4AB83550FBE5C5A;922.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 17595 strings out of 493014
- 329878 string characters out of 6133350
- 402249 words of memory out of 5000000
- 20778 multiletter control sequences out of 15000+600000
+ 17601 strings out of 493014
+ 329955 string characters out of 6133350
+ 400278 words of memory out of 5000000
+ 20780 multiletter control sequences out of 15000+600000
  11829 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,919b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,96p,1035b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -864,10 +863,10 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on compb2.pdf (7 pages, 620495 bytes).
+Output written on compb2.pdf (7 pages, 623516 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

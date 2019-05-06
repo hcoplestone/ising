@@ -88,8 +88,9 @@ Furthermore, the magnetisation (per spin) of the system is defined as
   \label{fig:spinalignment}
 \end{figure}
 
-As the number of spins in the system is fixed, a canonical thermodynamic ensemble is used. If we let a microstate $\mathcal{S}$ be defined by the instantaneous configuration of all the spins in the system, then the probability of finding the system in a microstate $S$ in thermal equilibrium at temperature $T$ is given by statistical mechanics as
+As the number of spins in the system is fixed, a canonical thermodynamic ensemble can be used to model the statistical behaviour of the system. If we let a microstate $\mathcal{S}$ be defined by the instantaneous configuration of all the spins in the system, then the probability of finding the system in a microstate $S$ in thermal equilibrium at temperature $T$ is given by statistical mechanics as \cite{statmech} \cite{handout}
 \begin{equation}
+\label{eq:probabilitydist}
 p_{eq}(\mathcal{S}) = \frac{1}{Z(T)} e^{-E(S)/k_B T}
 \end{equation}
 where $E(S)$ is the energy of microstate $S$ as given by equation (\ref{eq:systemenergy}). The canonical partition function $Z = Z(T)$ is used to enforce the normalisation condition $\sum_S{p_{eq}(S)} = 1$ which gives the expression for $Z$ as
@@ -98,7 +99,7 @@ Z(T) = \sum_{S} e^{-E(S)/k_B T}
 \end{equation}
 where the summations here run over all $2^N$ possible microstates $S$ of the system.
 
-In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$.  
+In this paper, a Metropolis Monte Carlo method is used to investigate the properties $E$ and $\mathcal{M}$ of two dimensional Ising Model systems for different thermodynamic temperatures $T$. In the interest of being concise, for details on how the Metropolis Monte Carlo method works and is implemented, I refer the reader to standard literature \cite{montecarlo} as this is a common and well studied algorithm for sampling phase spaces with defined probability distributions such as given by equation (\ref{eq:probabilitydist}).
 
 \section{Method}
 
@@ -109,13 +110,13 @@ Instead of calculating averages using an ensemble average as is conventional for
 \label{eq:averages}
 \langle \Gamma \rangle = \frac{1}{n}\sum_{i=1}^{n} \Gamma_i
 \end{equation}
-For independent measurements, then the uncertainty in this average is estimated well by the standard error
+For independent measurements, the uncertainty in this average is estimated well by the standard error \cite{handout}
 \begin{equation}
 \label{eq:standarderror}
 \bar{\sigma}_{\Gamma} = \frac{1}{\sqrt{n-1}} \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( \Gamma_i - \langle \Gamma \rangle \right)^2 }
 \end{equation}
 
-When calculating equilibrium averages for properties of an Ising system, it is important to ensure the system has reached thermodynamic equilibrium before starting to take samples of the quantity being averaged. For all equilibrium averages presented in this paper, an integer $n_0$ of Monte Carlo cycles are waited before samples are contributed to an average. This is to give the system time to evolve through its initial transient behaviour as the system changes from the initial all spin down configuration to a state of equilibrium characterised by the thermodynamic temperature of the system.
+When calculating equilibrium averages for properties of an Ising system, it is important to ensure the system has reached thermodynamic equilibrium before starting to take samples of the quantity being averaged. For all equilibrium averages presented in this paper, an integer $n_0$ of Monte Carlo cycles are waited before sampling is begun. This is to give the system time to evolve through its initial transient behaviour as the system changes from the initial all spin down configuration to a state of equilibrium characterised by the thermodynamic temperature of the system.
 
 As the Metropolis Monte Carlo simulation used in this paper is based on a Markovian random walk of phase space, subsequent samples of $\Gamma$ are very likely to exhibit autocorrelation. Consequently, if a time average $\langle \Gamma \rangle$ is to be representative of the system's entire equilibrium distribution for a practical number of samples $n$, it is useful to only sample $\Gamma$ every $\Delta \in \mathbb{Z}^{+}$ Monte Carlo sweeps. This increases the likelihood that subsequent samples are independent.
 
